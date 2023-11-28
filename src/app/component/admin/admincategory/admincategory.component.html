@@ -1,0 +1,39 @@
+<form #categoryForm="ngForm" (ngSubmit)="onSubmit(categoryForm)">
+  <header>
+    <h1>Category - Admin</h1>
+  </header>
+
+  <label for="categoryName">Category Name:</label>
+  <input
+    type="text"
+    class="form-control"
+    name="title"
+    id="categoryName"
+    name="title"
+    [(ngModel)]="categoryModel.title"
+  />
+
+  <button type="submit">Add Category</button>
+</form>
+  <table>
+    <thead>
+      <tr>
+        <th>Product Id</th>
+        <th>Product Title</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let category of categories">
+      <tr>
+        <td>{{ category.id }}</td>
+        <td>{{ category.title }}</td>
+        <td>
+          <button type="submit" class="edit">Edit</button
+          ><button class="del" (click)="onDelete(category.id!)">Delete</button>
+        </td>
+      </tr>
+
+      <!-- Add more rows as needed -->
+    </tbody>
+  </table>
+ 

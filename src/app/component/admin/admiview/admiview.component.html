@@ -1,0 +1,49 @@
+<header>
+    <h1> User Details - Admin</h1>
+</header>
+
+    <div class="container">
+        <!-- User Details Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Joined At</th>
+                </tr>
+            </thead>
+            <tbody    
+            *ngFor="let user of userDetails"
+            (click)="setSelectedUser(user)"
+            [ngClass]="user.id === userDetail.id ? 'table-primary' : ''"
+          >
+                <!-- Sample user data, replace with dynamic data from your database -->
+                <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.joinedAt}}</td>
+                </tr>
+              
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+
+       
+        <div class="col-6">
+            <p>Address</p>
+            <div class="" *ngFor="let address of userDetail.addressList">
+              <div>
+                <p>Address:{{ address.address }}</p>
+              </div>
+              <div>
+                <p>City:{{ address.city }}</p>
+              </div>
+              <div>
+                <p>Pincode:{{ address.pincode }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    

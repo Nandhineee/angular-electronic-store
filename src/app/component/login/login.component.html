@@ -1,0 +1,42 @@
+<form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+  <div class="container">
+    <div class="login">
+      <div class="container">
+        <i class="fas fa-user-plus fa-1x"></i>
+        <h1>Log in</h1>
+        <br />
+        <input
+          type="text"
+          placeholder="Password"
+          class="form-control"
+          name="username"
+          [(ngModel)]="username"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          type="password"
+          class="form-control"
+          name="password"
+          [(ngModel)]="password"
+        /><br />
+        <input type="checkbox" /><span>Remember me</span>
+        <a href="#">Forgot password?</a>
+        <button type="submit">log in</button>
+        <p class="error" [ngClass]="error.length > 0 ? 'visible' : 'invisible'">
+          {{ error }}
+        </p>
+      </div>
+    </div>
+    <div class="register">
+      <div class="container">
+        <i class="fas fa-user-plus fa-2x"></i>
+        <h2>Hello,friend!</h2>
+        <p>Enter your personal details and start journey with us</p>
+        <button href="#" routerLink="/register" routerLinkActive="active">
+          Register <i class="fas fa-arrow-circle-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

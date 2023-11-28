@@ -1,0 +1,41 @@
+<body>
+
+  <header>
+      <h1>Shopping Cart</h1>
+  </header>
+
+  <main>
+      <table>
+          <thead>
+              <tr>
+                  <th>productName</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Action</th>
+                  <!-- <th>Total</th>  -->
+              </tr>
+          </thead>
+          <tbody>
+              <!-- Product 1 -->
+              <tr class="cart-item" *ngFor="let cart of carts">
+                  <td>
+                      <img src="https://i.ibb.co/rygRLTd/product02.png" alt="Product A">
+                      Product A
+                  </td>
+                  <td>{{cart.title }}</td>
+                  <td>{{cart.price}}</td>
+                  
+            <td><button class="del" (click)="onDelete(cart.userId!,cart.gadgetId)">Delete</button></td>
+              </tr>
+         
+              <!-- Add more products as needed -->
+          </tbody>
+      </table>
+
+      <div class="cart-total">
+          <strong>Total: $55.00</strong>
+      </div>
+
+      <a href="#" class="checkout-btn"routerLink="/order" routerLinkActive="active"class="checkout-btn"routerLink="/order" routerLinkActive="active">Proceed to Checkout</a>
+  </main>
+</body>
