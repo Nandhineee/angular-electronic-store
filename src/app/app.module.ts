@@ -4,7 +4,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './component/home/home.component';
+
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -21,6 +21,7 @@ import { AdmincategoryComponent } from './component/admin/admincategory/admincat
 import { AdmiviewComponent } from './component/admin/admiview/admiview.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { AdminorderComponent } from './component/admin/adminorder/adminorder.component';
+import { HomeComponent } from './component/home/home.component';
 
 export function playerFactory() {
   return player;

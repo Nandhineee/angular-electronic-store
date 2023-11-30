@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { AppResponse } from '../model/appResponse';
 import { urlEndpoint } from '../utils/constant';
 import { Product } from '../model/product';
+import { Cart } from '../model/cart';
 
 @Injectable({
   providedIn: 'root'
@@ -28,10 +29,24 @@ export class ProductService {
     return this.http.post<AppResponse>(
       `${urlEndpoint.baseUrl}/admin/gadget`,product
     )
-  }
 
-  
-}
+    
+  }
+ 
+
+  addToCart(userId: number, productId: number): Observable<Cart[]> {
+    let count: number = 1;
+    const requestData = {
+      userId: userId,
+      gadgetId: productId,
+      count: count,
+    };
+    console.log(requestData);
+ 
+    return this.http.post<Cart[]>(`${urlEndpoint.baseUrl}/cart`, requestData);
+  }
+}  
+
 
 
 

@@ -12,7 +12,67 @@ import { AppUser } from '../model/appUser';
   providedIn: 'root',
 })
 export class AuthService {
-  private isAdminSubject = new BehaviorSubject<boolean>(false);
+//   private isAdminSubject = new BehaviorSubject<boolean>(false);
+//   private isLoggedInSubject = new BehaviorSubject<boolean>(false);
+
+//   isAdmin$: Observable<boolean> = this.isAdminSubject.asObservable();
+//   isLoggedIn$: Observable<boolean> = this.isLoggedInSubject.asObservable();
+
+//   constructor(
+//     private router: Router,
+//     private http: HttpClient,
+//     private storageService: StorageService
+//   ) {
+//     if (storageService.getLoggedInUser().id != null) {
+//       this.setLoggedIn(storageService.getLoggedInUser());
+//     }
+//   }
+
+//  login(login: Login): Observable<AppResponse> {
+//     return this.http
+//       .post<AppResponse>(`${urlEndpoint.baseUrl}/auth/login`, login)
+//       .pipe(
+//         map((user) => {
+//           this.storageService.setAuthData(
+//             window.btoa(login.username + ":" + login.password)
+//           );
+//           return user;
+//         })
+//       );
+//   }
+
+//   logout() {
+//     this.storageService.removeAuthData();
+//     this.isAdminSubject.next(false);
+//     this.isLoggedInSubject.next(false);
+//     this.storageService.removeLoggedInUser();
+//     this.storageService.removeRoute();
+//     this.router.navigate(["/login"], { replaceUrl: true });
+//   }
+
+//   isAdmin(): boolean {
+//     return this.isAdminSubject.value;
+//   }
+
+//   isLoggedIn(): boolean {
+//     return this.isLoggedInSubject.value;
+//   }
+
+//   setLoggedIn(user: AppUser): void {
+//     this.storageService.setLoggedInUser(user);
+//     this.isLoggedInSubject.next(true);
+
+//     let route: string | null = this.storageService.getRoute();
+//     if (user.role === CONSTANT.USER) {
+//       if (route === null) route = "";
+//       this.router.navigate(["/" + route], { replaceUrl: true });
+//     } else if (user.role === CONSTANT.ADMIN) {
+//       if (route === null) route = "adminproduct";
+//       this.isAdminSubject.next(true);
+//       this.router.navigate(["/" + route], { replaceUrl: true });
+//     }
+//   }
+private isAdminSubject = new BehaviorSubject<boolean>(false);
   private isLoggedInSubject = new BehaviorSubject<boolean>(false);
 
   isAdmin$: Observable<boolean> = this.isAdminSubject.asObservable();
@@ -28,13 +88,13 @@ export class AuthService {
     }
   }
 
- login(login: Login): Observable<AppResponse> {
+  login(login: Login): Observable<AppResponse> {
     return this.http
       .post<AppResponse>(`${urlEndpoint.baseUrl}/auth/login`, login)
       .pipe(
         map((user) => {
           this.storageService.setAuthData(
-            window.btoa(login.username + ":" + login.password)
+            window.btoa(login.username + ':' + login.password)
           );
           return user;
         })
@@ -46,8 +106,7 @@ export class AuthService {
     this.isAdminSubject.next(false);
     this.isLoggedInSubject.next(false);
     this.storageService.removeLoggedInUser();
-    this.storageService.removeRoute();
-    this.router.navigate(["/login"], { replaceUrl: true });
+    this.router.navigate(['/login'], { replaceUrl: true });
   }
 
   isAdmin(): boolean {
@@ -62,14 +121,15 @@ export class AuthService {
     this.storageService.setLoggedInUser(user);
     this.isLoggedInSubject.next(true);
 
-    let route: string | null = this.storageService.getRoute();
+    let route:string | null=this.storageService.getRoute();
     if (user.role === CONSTANT.USER) {
-      if (route === null) route = "";
+      if(route===null) route="";
       this.router.navigate(["/" + route], { replaceUrl: true });
     } else if (user.role === CONSTANT.ADMIN) {
-      if (route === null) route = "adminproduct";
+      if(route===null) route= "/adminproduct";
       this.isAdminSubject.next(true);
       this.router.navigate(["/" + route], { replaceUrl: true });
     }
   }
+
 }

@@ -56,3 +56,9 @@
     bottom: -4px;
     left: 20px;
   }
+  .sideBarActive {
+    background-color: var(--primary-500) !important;
+    color: var(--primary-100) !important;
+  }
+  
+  

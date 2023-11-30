@@ -1,19 +1,76 @@
-<header>
+<header class="nav" *ngIf="isAdmin">
   <div id="header">
     <div class="header-logo">
-      <a href="indext.html"><img src="images/logo.png" alt="" /></a>
+      <a href="indext.html"><img src="/src/assets/images/logo.svg" alt="" /></a>
     </div>
     <div class="header-list">
       <nav class="header-list-nav">
         <ul>
           <li><a class="fa-solid fa-house"></a></li>
-        
-          <li><a class="fa-solid fa-user"routerLink="/login" routerLinkActive="active" ></a></li>
-          <li><a class="fa-solid fa-cart-shopping"routerLink="/cart" routerLinkActive="active"></a></li>
-          <li><a  class="fa-solid fa-right-from-bracket" routerLink="" routerLinkActive="active"></a></li>
+
+          <li>
+            <a
+              class="fa-solid fa-user"
+              routerLink="/login"
+              routerLinkActive="active"
+            ></a>
+          </li>
+          <li>
+            <a
+              class="fa-solid fa-cart-shopping"
+              routerLink="/cart"
+              routerLinkActive="active"
+            ></a>
+          </li>
+          <li>
+            <a
+              class="fa-solid fa-right-from-bracket"
+              routerLink=""
+              routerLinkActive="active"
+              (click)="logout()"
+              role="button"
+            ></a>
+          </li>
         </ul>
       </nav>
-    
+    </div>
+  </div>
+</header>
+<header class="nav" *ngIf="!isAdmin">
+  <div id="header">
+    <div class="header-logo">
+      <a href="indext.html"><img src="/assets/images/logo.svg" alt="" /></a>
+    </div>
+    <div class="header-list">
+      <nav class="header-list-nav">
+        <ul>
+          <li><a class="fa-solid fa-house"></a></li>
+
+          <li>
+            <a
+              class="fa-solid fa-user"
+              routerLink="/login"
+              routerLinkActive="active"
+            ></a>
+          </li>
+
+          <button class="header-action-btn">
+            <i class="fas fa-cart-plus" routerLink="/cart"
+            routerLinkActive="active"></i>
+
+            <!-- <div class="btn-badge green" aria-hidden="true">0</div> -->
+          </button>
+          <li>
+            <a
+              class="fa-solid fa-right-from-bracket"
+              routerLink=""
+              routerLinkActive="active"
+              (click)="logout()"
+              role="button"
+            ></a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
 </header>

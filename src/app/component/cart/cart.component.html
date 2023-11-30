@@ -1,41 +1,35 @@
-<body>
-
-  <header>
-      <h1>Shopping Cart</h1>
+<header>
+    <h1>Your Shopping Cart</h1>
   </header>
 
-  <main>
-      <table>
-          <thead>
-              <tr>
-                  <th>productName</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th>Action</th>
-                  <!-- <th>Total</th>  -->
-              </tr>
-          </thead>
-          <tbody>
-              <!-- Product 1 -->
-              <tr class="cart-item" *ngFor="let cart of carts">
-                  <td>
-                      <img src="https://i.ibb.co/rygRLTd/product02.png" alt="Product A">
-                      Product A
-                  </td>
-                  <td>{{cart.title }}</td>
-                  <td>{{cart.price}}</td>
-                  
-            <td><button class="del" (click)="onDelete(cart.userId!,cart.gadgetId)">Delete</button></td>
-              </tr>
-         
-              <!-- Add more products as needed -->
-          </tbody>
-      </table>
+  <div class="container">
 
-      <div class="cart-total">
-          <strong>Total: $55.00</strong>
-      </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cart of carts">
+          <td class="cart-item" >
+            <img src="https://i.ibb.co/rygRLTd/product02.png" alt="Product 1" class="product-image">
+          </td>
+          <td>{{cart.title}}</td>
+          <td class="quantity"><input type="number" value="2" min="10"></td>
+          <td class="total-price">{{cart.price}}</td>
+        </tr>
+        
 
-      <a href="#" class="checkout-btn"routerLink="/order" routerLinkActive="active"class="checkout-btn"routerLink="/order" routerLinkActive="active">Proceed to Checkout</a>
-  </main>
-</body>
+      
+        <!-- Add more rows for additional products -->
+      </tbody>
+    </table>
+
+    <a href="#" class="checkout-btn"routerLink="/order"
+    routerLinkActive="active">Proceed to Checkout</a>
+
+  </div>

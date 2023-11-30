@@ -1,130 +1,89 @@
-
-@import url("https://fonts.googleapis.com/css2?family=Exo+2&display=swap");
-body {
-	/******************************************************************
-  This contains the font, Internet Explorer fall back options and 
-  the background color for all of the sites
-  ******************************************************************/
-	background: #C3E6F3 no-repeat center center fixed;
-	margin: 0 auto;
-	font-family: "Lucida Sans Unicode", "Lucida Grande", "sans-serif";
-	/* IE Fallback */
-	background:#696969;
-	width: 100%;
-	height: 100%;
+.gradient-custom-2 {
+	/* fallback for old browsers */
+	background:#ddd;
 }
-/******************************************************************
-Below is the code for the red and blue button class which will be 
-for all of the buttons in the program including the submit, next,
-cancel, etc. 
-******************************************************************/
-
-.blueButton {
-	/* -moz-box-shadow: inset 0px -3px 7px 0px #29bbff;
-	-webkit-box-shadow: inset 0px -3px 7px 0px #29bbff;
-	box-shadow: inset 0px -3px 7px 0px #29bbff; */
 	
-    background-color:#111;
-	border-radius: 3px;
-	border: 1px solid #525252;
-	display: inline-block;
-	cursor: pointer;
-	color: #fff;
-	font-size: 15px;
-	padding: 9px 23px;
-	text-decoration: none;
-}
-
-.blueButton:hover {
-	background-color:#333;
-}
-
-.blueButton:active {
+	/* Chrome 10-25, Safari 5.1-6
+	background: -webkit-linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1));
+	
+	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	/* background: linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1)) */ *
+	
+	
+	#progressbar-1 {
+	color: #455A64;
+	}
+	
+	#progressbar-1 li {
+	list-style-type: none;
+	font-size: 13px;
+	width: 33.33%;
+	float: left;
 	position: relative;
-	top: 1px;
-}
-
-.price{
-    padding-left: 65%;
-}
-/******************************************************************
-Below is the code for the confirm order page, it displays the material ID and cost of the order
-******************************************************************/
-
- .payment input[type=text] {
-	width: 95%;
-	padding: 12px 20px;
-	margin: 8px 0;
+	}
+	
+	#progressbar-1 #step1:before {
+	content: "1";
+	color: #fff;
+	width: 29px;
+	margin-left: 22px;
+	padding-left: 11px;
+	}
+	
+	#progressbar-1 #step2:before {
+	content: "2";
+	color: #fff;
+	width: 29px;
+	}
+	
+	#progressbar-1 #step3:before {
+	content: "3";
+	color: #fff;
+	width: 29px;
+	margin-right: 22px;
+	text-align: center;
+	}
+	
+	#progressbar-1 li:before {
+	line-height: 29px;
 	display: block;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-sizing: border-box;
-	resize: none;
-	text-align: left;
-}
-
-.payment input[type=text]:focus {
-	border: 1px solid #a8a8a8;
-}
-
-.payment input[type=submit],
-.payment input[type=button] {
-	float: right;
-	margin: -20px 20px 10px 0px;
-}
-
-.payment {
-	border-radius: 5px;
-	background-color: #f8f8f8;
-	padding: 40px;
-	width: 40%;
-	margin: 0 auto;
-	margin-top: 20px;
-	box-shadow: 1px 1px 5px #888888; 
-}
-
-
-/******************************************************************
-Below is the form for the confirm order table 
-******************************************************************/
-
-/* CSS for Credit Card Payment form */
-/* .credit-card-box .panel-title {
-    display: inline;
-    font-weight: bold;
-}
-.credit-card-box .form-control.error {
-    border-color: red;
-    outline: 0;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(255,0,0,0.6);
-}
-.credit-card-box label.error {
-  font-weight: bold;
-  color: red;
-  padding: 2px 8px;
-  margin-top: 2px;
-}
-.credit-card-box .payment-errors {
-  font-weight: bold;
-  color: red;
-  padding: 2px 8px;
-  margin-top: 2px;
-}
-.credit-card-box label {
-    display: block;
-}
-/* The old "center div vertically" hack */
-/* .credit-card-box .display-table {
-    display: table; */
-/* }
-.credit-card-box .display-tr {
-    display: table-row;
-}
-.credit-card-box .display-td {
-    display: table-cell;
-    vertical-align: middle;
-    width: 50%;
-}
-.credit-card-box .panel-heading img {
-    min-width: 180px;
-}  */
+	font-size: 12px;
+	background: #455A64;
+	border-radius: 50%;
+	margin: auto;
+	}
+	
+	#progressbar-1 li:after {
+	content: '';
+	width: 121%;
+	height: 2px;
+	background: #455A64;
+	position: absolute;
+	left: 0%;
+	right: 0%;
+	top: 15px;
+	z-index: -1;
+	}
+	
+	#progressbar-1 li:nth-child(2):after {
+	left: 50%
+	}
+	
+	#progressbar-1 li:nth-child(1):after {
+	left: 25%;
+	width: 121%
+	}
+	
+	#progressbar-1 li:nth-child(3):after {
+	left: 25%;
+	width: 50%;
+	}
+	
+	#progressbar-1 li.active:before,
+	#progressbar-1 li.active:after {
+	background: #fff;
+	}
+	
+	.card-stepper {
+	z-index: 0
+	}

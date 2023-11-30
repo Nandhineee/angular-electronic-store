@@ -49,6 +49,12 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            margin-left: 25%;
+            margin-right: 25%;
+            text-align: center;
+        }
+        .btn{
+            text-align: left;
         }
 
         button:hover {

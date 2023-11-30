@@ -1,7 +1,11 @@
 export interface Cart {
-    "id": number,
-    "userId": number,
-    "title": string,
-    "price": number,
-    "gadgetId": number
+    id: number;
+    title: String;
+    image?: File;
+    price: number;
+    count: number;
+    total: number;
+    gadgetId: number;
+    userId: number;
+  
 }
