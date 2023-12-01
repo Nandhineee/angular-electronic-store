@@ -1,27 +1,110 @@
 # AngularElectronicStore
+# Electronic-Gadget-Store
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.5.
+**Description**
 
-## Development server
+    ➡️ Created a online shopping for Gadgets 
+    ➡️ user can view the gadgets
+    ➡️ update the user profile and add or delete their address
+    ➡️ user add the gadget to the cart
+    ➡️ before going to place the order then give checkout
+    ➡️ The admin can Add/Edit/Delete the product
+    ➡️ admin can also view user profile and user order history
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+**Credentials**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    👉 Role-Admin 
+        📧username = "admin" | 🔐Password = "admin"
+    👉 Role -User
+        📧username = "nandhini" | 🔐Password = "nandhini"
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**Technologies used**
 
-## Running end-to-end tests
+    👉 '💻-Spring Boot Java' for Back end
+    👉 '💻-Angular' for Front end 
+    👉 '🗃️-MySql' for Database 
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+**Screenshots**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![login](https://github.com/Nandhineee/Electronic-Gadget-Store/assets/145537963/1f0210b0-a34b-4e36-9ae3-558d395c8083)
+![homepage](https://github.com/Nandhineee/Electronic-Gadget-Store/assets/145537963/b956a8f2-73e9-48ef-bb48-29823671b065)
+![homepage2](https://github.com/Nandhineee/Electronic-Gadget-Store/assets/145537963/67e25f97-27e0-4f01-ba77-40f5690c2272)
+![homepage3](https://github.com/Nandhineee/Electronic-Gadget-Store/assets/145537963/f8aca778-185b-45fc-a632-76107af4d1aa)
+![Cart](https://github.com/Nandhineee/Electronic-Gadget-Store/assets/145537963/8567efc5-b634-47ac-9dcd-0faa3552e11c)
+![admin-detail](https://github.com/Nandhineee/Electronic-Gadget-Store/assets/145537963/3aeeefa5-a458-41f2-b12b-b9ebe9b98cbe)
+
+
+**Challenges**
+
+    🔴 Faced challenges in creating and mapping the entites.
+    🔴 While integrating front end and back end 
+    🔴 Uploading image to the server and downloading image from the server
+    🔴 415 - unsupported media file
+    🔴 some logic missing
+
+
+
+**Hardest Errors** 
+
+    🚩 Internal server error for java persisitance exception for date - Solved it by converting the date format.
+    🚩 Internal server error hibernate nested exception - Solved it by reworking on the modal mapping.
+    🚩 Internal server error for delete nested entities - Solved it by adding cascade type ALL.
+    🚩 Altering the entity and updating it.
+
+
+**Repository Link**
+
+    🔗 Front end-https://github.com/Nandhineee/angular-electronic-store   
+    🔗 Back end-Nandhineee/Electronic-Gadget-Store
+
+
+**MySQL Schema**
+
+
+
+
+
+
+
+Demo Video Url
+  
+    🔗 url of demo video
+  
+  
+  
+  
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+➡️ Demo Video Url -
+
+
+
+
+
+
+
+
+
+🔴 some logic missing
