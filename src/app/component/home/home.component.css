@@ -119,7 +119,7 @@ html {
 }
 
 body {
-  background: var(--white);
+  background: var(--white)!important;
   margin-top: 0%;
   padding-top: 0%;
 }
@@ -194,6 +194,12 @@ h3 > a { color: inherit; }
   --border-color: var(--eerie-black);
 }
 
+#product{
+  text-align: center;
+  font-size: 50%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
 .btn-outline {
   --height: 50px;
   --background: var(--white);
@@ -255,6 +261,7 @@ h3 > a { color: inherit; }
   gap: 4px;
   padding: 8px;
 }
+.product
 
 .nav-open-btn span {
   width: 20px;
@@ -405,8 +412,10 @@ h3 > a { color: inherit; }
 .hero-title {
   margin-bottom: 10%;
   margin-right: 5%;
-  max-width: 12ch;
+  max-width: 40ch;
   color: whitesmoke;
+  font-weight: 10000;
+  font-size: 400%;
 }
 
 

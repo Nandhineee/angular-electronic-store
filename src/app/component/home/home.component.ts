@@ -113,7 +113,7 @@ export class HomeComponent implements OnInit {
         id: 0,
         total: item.total,
         username: this.stoargeService.getLoggedInUser().username,
-        orderedGadgetList: [
+        gadgetList: [
           {
             id: item.gadgetId,
             title: item.title,

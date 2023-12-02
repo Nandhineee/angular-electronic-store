@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    padding-top: 70% !important;
     background-color: #f4f4f4;
 }
 
@@ -29,6 +29,7 @@ th, td {
     border-bottom: 1px solid #ddd;
 }
 header {
+    margin-top: 6%;
     background-color: #333;
     color: #fff;
     text-align: center;

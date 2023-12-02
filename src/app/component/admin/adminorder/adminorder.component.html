@@ -1,4 +1,7 @@
-<table class="table">
+<header class="container-fluid">
+  <h1> Admin</h1>
+</header>
+<!-- <table class="table">
     <thead>
       <tr>
         <th scope="col">userId</th>
@@ -8,8 +11,7 @@
         <th scope="col">orderStatus</th>
       </tr>
     </thead>
-    <tbody *ngFor="let order of orderDetails">
-      <tr *ngFor="let item of order.orderedGadgetList">
+   
         <th>{{ order.id }}</th>
         <td>{{ order.username }}</td>
         <td>{{ item.title }}</td>
@@ -25,5 +27,33 @@
         </td>
       </tr>
     </tbody>
-  </table>
-  <a routerLink="/admin"><button>Back</button></a>
+  </table> -->
+
+
+    <!-- User Details Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>OrderDetails</th>
+                <th>Price</th>
+               
+                
+            </tr>
+        </thead>
+        <tbody *ngFor="let order of orderDetails">
+          <tr *ngFor="let item of order.gadgetList">
+            <!-- Sample user data, replace with dynamic data from your database -->
+              <th>{{ order.id }}</th>
+              <td>{{ order.username }}</td>
+              <td>{{ item.title }}</td>
+              <td>{{ item.price }}</td>
+            </tr>
+            
+          
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+    
+

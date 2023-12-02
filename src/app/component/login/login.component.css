@@ -1,25 +1,4 @@
-body {
-    margin: 0;
-    margin-top: 3%;
-    overflow-x: hidden;
-    padding-top: 0%;
 
-  }
-  
-  .main-body {
-    padding-top: 60px;
-  }
-  
-  .header {
-    background-color: #f1f1f1;
-    padding: 10px;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-  }
   
   .header p {
     display: inline-block;
@@ -51,7 +30,7 @@ body {
   }
   body {
       min-height: 100%;
-      background-color: #ffffff;
+      background-color:  white !important;
   }
   h1 {
       letter-spacing: -1px;
@@ -61,14 +40,13 @@ body {
     text-decoration: unset;
   }
   .login-root {
-      background: #fff;
+      background:#697386;
       display: flex;
       width: 100%;
-      min-height: 100vh;
       overflow: hidden;
   }
   .loginbackground {
-      min-height: 692px;
+      /* min-height: 692px; */
       position: fixed;
       bottom: 0;
       left: 0;
@@ -121,19 +99,19 @@ body {
   color:yellowgreen ;
   }
   .box-divider--light-all-2 {
-      box-shadow: inset 0 0 0 2px #e3e8ee;
+      box-shadow: inset 0 0 0 2px white;
   }
   .box-background--blue {
       background-color: #4a4b52;
   }
   .box-background--white {
-    background-color: #ffffff; 
+    background-color: white; 
   }
   .box-background--blue800 {
       background-color: #515259;
   }
   .box-background--gray100 {
-      background-color: #e3e8ee;
+      background-color: white;
   }
   .box-background--cyan200 {
       background-color: #7fd3ed;
@@ -167,7 +145,7 @@ body {
       margin: 0px auto;
       width: 100%;
       max-width: 448px;
-      background: white;
+      background: #e3e6f3;
       border-radius: 4px;
       box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
   }
@@ -191,7 +169,7 @@ body {
   }
   .grid--50-50 {
       display: grid;
-      grid-template-columns: 50% 50%;
+      /* grid-template-columns: 50% 50%; */
       align-items: center;
   }
   
@@ -223,7 +201,7 @@ body {
                   rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
                   rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
                   rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
-      color: #fff;
+      color:black;
       font-weight: 600;
       cursor: pointer;
   }
@@ -241,7 +219,8 @@ body {
   }
   
   input[type="submit"]:hover {
-    background-color: #100f0e; 
+    background-color: #100f0e;
+    color: white; 
   }
   
   a.ssolink {
@@ -252,6 +231,8 @@ body {
   .footer-link span {
       font-size: 14px;
       text-align: center;
+      
+
   }
   .listing a {
       color: #697386;

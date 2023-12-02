@@ -23,10 +23,11 @@ export class OrderService {
   
   createOrder(userId:number,artworkId:number,addressId:number):Observable<Order[]>{
     let orderdata={
-      userId:userId,
-      artWorkId:artworkId,
-      addressId:addressId
+      userId:1,
+      addressId:1
     }
+    console.log("changes userid and addressid");
+    
     return this.http.post<Order[]>(`${urlEndpoint.baseUrl}/order`,orderdata)
   }
 

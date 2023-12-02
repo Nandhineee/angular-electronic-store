@@ -1,5 +1,3 @@
-
-
 <body>
   <!-- 
     - #HEADER
@@ -8,7 +6,7 @@
   <header class="header" data-header>
     <!-- <div class="container"> -->
 
-      <!-- <div class="overlay" data-overlay></div>
+    <!-- <div class="overlay" data-overlay></div>
 
       <div class="header-search">
         <input type="search" name="search" placeholder="Search Product..." class="input-field">
@@ -59,68 +57,65 @@
         <span></span>
         <span></span>
       </button> -->
-      <nav class="navbar" data-navbar> 
+    <nav class="navbar" data-navbar>
+      <div class="navbar-top">
+        <a href="#" class="logo">
+          <img
+            src="./images/logo.svg"
+            alt="Casmart logo"
+            width="130"
+            height="31"
+          />
+        </a>
 
-        <div class="navbar-top">
+        <button
+          class="nav-close-btn"
+          data-nav-close-btn
+          aria-label="Close Menu"
+        ></button>
+      </div>
 
-          <a href="#" class="logo">
-            <img src="./images/logo.svg" alt="Casmart logo" width="130" height="31">
-          </a>
+      <ul class="navbar-list">
+        <li>
+          <a href="" class="navbar-link">Home</a>
+        </li>
 
-          <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
-            
-          </button>
+        <li>
+          <a href="/navbar" class="navbar-link">About</a>
+        </li>
 
-        </div>
-
-        <ul class="navbar-list">
-
-          <li>
-            <a href="#home" class="navbar-link">Home</a>
-          </li>
-
-          <li>
-            <a href="#" class="navbar-link">Shop</a>
-          </li>
-
-          <li>
-            <a href="#" class="navbar-link">About</a>
-          </li>
-
-          <li>
-            <a href="#blog" class="navbar-link">Blog</a>
-          </li>
-
-          <li>
-            <a href="#" class="navbar-link">Contact</a>
-          </li>
-
-        </ul>
-
-      </nav>
-
-    
+        <li>
+          <a href="/home" class="navbar-link">Contact</a>
+        </li>
+      </ul>
+    </nav>
   </header>
-
 
   <main>
     <article>
-
       <!-- 
         - #HERO
       -->
 
-      <section class="hero" id="home" style="background-image: url(https://c0.wallpaperflare.com/preview/662/807/597/black-and-gray-camera-on-table-near-tablet-keyboard-case.jpg)">
+      <section
+        class="hero"
+        id="home"
+        style="
+          background-image: url(https://c0.wallpaperflare.com/preview/662/807/597/black-and-gray-camera-on-table-near-tablet-keyboard-case.jpg);
+        "
+      >
         <div class="container">
-
           <div class="hero-content">
-
             <h2 class="h1 hero-title">Gadget House</h2>
 
-            <button class="btn btn-primary">Shop Now</button>
-
+            <button
+              class="btn btn-primary"
+              routerLink="/login"
+              routerLinkActive="active"
+            >
+              Shop Now
+            </button>
           </div>
-
         </div>
       </section>
       <!-- 
@@ -129,12 +124,13 @@
 
       <section class="service">
         <div class="container">
-
           <ul class="service-list">
-
             <li class="service-item">
               <div class="service-item-icon">
-                <img src="/assets/images/service-icon-1.svg" alt="Service icon">
+                <img
+                  src="/assets/images/service-icon-1.svg"
+                  alt="Service icon"
+                />
               </div>
 
               <div class="service-content">
@@ -146,7 +142,10 @@
 
             <li class="service-item">
               <div class="service-item-icon">
-                <img src="/assets/images/service-icon-2.svg" alt="Service icon">
+                <img
+                  src="/assets/images/service-icon-2.svg"
+                  alt="Service icon"
+                />
               </div>
 
               <div class="service-content">
@@ -158,7 +157,10 @@
 
             <li class="service-item">
               <div class="service-item-icon">
-                <img src="/assets/images/service-icon-3.svg" alt="Service icon">
+                <img
+                  src="/assets/images/service-icon-3.svg"
+                  alt="Service icon"
+                />
               </div>
 
               <div class="service-content">
@@ -170,7 +172,10 @@
 
             <li class="service-item">
               <div class="service-item-icon">
-                <img src="/nabvar/images/service-icon-4.svg" alt="Service icon">
+                <img
+                  src="/assets/images/service-icon-4.svg"
+                  alt="Service icon"
+                />
               </div>
 
               <div class="service-content">
@@ -179,9 +184,7 @@
                 <p class="service-item-text">24/7 Dedicated Support</p>
               </div>
             </li>
-
           </ul>
-
         </div>
       </section>
       <!-- 
@@ -190,65 +193,109 @@
 
       <section class="section category">
         <div class="container">
-
           <ul class="category-list">
-
             <li class="category-item">
               <figure class="category-banner">
-                <img src="https://i.ibb.co/rygRLTd/product02.png" alt="headset" loading="lazy" width="510" height="600"
-                  class="w-100">
+                <img
+                  src="https://i.ibb.co/rygRLTd/product02.png"
+                  alt="headset"
+                  loading="lazy"
+                  width="510"
+                  height="600"
+                  class="w-100"
+                />
               </figure>
 
-              <a href="#" class="btn btn-secondary"routerLinkActive="active"routerLink="/product" >Headset</a>
+              <a
+                href="#"
+                class="btn btn-secondary"
+                routerLinkActive="active"
+                routerLink="/product"
+                >HEADSET</a
+              >
             </li>
 
             <li class="category-item">
               <figure class="category-banner">
-                <img src="https://i.ibb.co/sjwZzS4/product04.png" alt="Active & outdoor" loading="lazy" width="510" height="600"
-                  class="w-100">
+                <img
+                  src="https://i.ibb.co/sjwZzS4/product04.png"
+                  alt="Active & outdoor"
+                  loading="lazy"
+                  width="510"
+                  height="600"
+                  class="w-100"
+                />
               </figure>
 
-              <a href="#" class="btn btn-secondary"routerLinkActive="active"routerLink="/product" >Tab</a>
+              <a
+                href="#"
+                class="btn btn-secondary"
+                routerLinkActive="active"
+                routerLink="/product"
+                >TAB</a
+              >
             </li>
 
             <li class="category-item">
               <figure class="category-banner">
-                <img src="/assets/images/a1.png" alt="Winter wear" loading="lazy" width="510" height="600"
-                  class="w-100">
+                <img
+                  src="data:image/jpeg;base64,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"
+                  alt="Winter wear"
+                  loading="lazy"
+                  width="510"
+                  height="600"
+                  class="w-100"
+                />
               </figure>
 
-              <a href="#" class="btn btn-secondary">Air pods</a>
+              <a href="#" class="btn btn-secondary">MOUSE</a>
             </li>
 
             <li class="category-item">
               <figure class="category-banner">
-                <img src="/assets/images/c2.png" alt="Exclusive footwear" loading="lazy" width="510"
-                  height="600" class="w-100">
+                <img
+                  src="/assets/images/a1.png"
+                  alt="Exclusive footwear"
+                  loading="lazy"
+                  width="510"
+                  height="600"
+                  class="w-100"
+                />
               </figure>
 
-              <a href="#" class="btn btn-secondary">Phone</a>
+              <a href="#" class="btn btn-secondary">AIR PODS</a>
             </li>
 
             <li class="category-item">
               <figure class="category-banner">
-                <img src="/assets/images/c2.png" alt="Jewelry" loading="lazy" width="510" height="600"
-                  class="w-100">
+                <img
+                  src="/assets/images/c2.png"
+                  alt="Jewelry"
+                  loading="lazy"
+                  width="510"
+                  height="600"
+                  class="w-100"
+                />
               </figure>
 
-              <a href="#" class="btn btn-secondary">Jewelry</a>
+              <a href="#" class="btn btn-secondary">LAPTOP</a>
             </li>
 
             <li class="category-item">
               <figure class="category-banner">
-                <img src="/assets/images/c2.png" alt="Sports cap" loading="lazy" width="510" height="600"
-                  class="w-100">
+                <img
+                  src="/assets/images/c2.png"
+                  alt="Sports cap"
+                  loading="lazy"
+                  width="510"
+                  height="600"
+                  class="w-100"
+                />
               </figure>
 
-              <a href="#" class="btn btn-secondary">Sports Cap</a>
+              <a href="#" class="btn btn-secondary">PHONE</a>
             </li>
-
           </ul>
-
         </div>
       </section>
 
@@ -256,16 +303,13 @@
         - #PRODUCT
       -->
 
-
       <section class="section product">
         <div class="container">
-
           <h2 class="h2 section-title">Products of the week</h2>
 
           <ul class="filter-list">
-
             <li>
-              <button class="filter-btn  active">Best Seller</button>
+              <button class="filter-btn active">Best Seller</button>
             </li>
 
             <li>
@@ -279,43 +323,47 @@
             <li>
               <button class="filter-btn">New Arrival</button>
             </li>
-
           </ul>
 
           <ul class="product-list">
-
             <li class="card" *ngFor="let product of products">
               <div class="product-card">
-
                 <figure class="card-banner">
-
                   <a href="#">
-                    <img src="assets/images/c2.png" alt="Varsi Leather Bag" loading="lazy" width="800"
-                      height="1034" class="w-100">
+                    <img
+                      src="/assets/images/t1.png"
+                      alt="Varsi Leather Bag"
+                      loading="lazy"
+                      width="800"
+                      height="1034"
+                      class="w-100"
+                    />
                   </a>
 
-                  <div class="card-badge red"> -25%</div>
+                  <div class="card-badge red">-25%</div>
 
                   <div class="card-actions">
-
                     <!-- <button class="card-action-btn" aria-label="Quick view">
                       
                     </button> -->
 
-                    <button class="card-action-btn cart-btn">
+                    <!-- <button class="card-action-btn cart-btn">
                       
 
                       <p type="submit" 
                       (click)="addToCart(product.id!)">Add to Cart</p>
-                    </button>
+                    </button> -->
+                    <a
+                      type="submit"
+                      class="btn btn-secondary"
+                      (click)="addToCart(product.id!)"
+                      >Add to Cart</a
+                    >
 
                     <!-- <button class="card-action-btn" aria-label="Add to Whishlist">
                       
                     </button> -->
-
                   </div>
-                  <p>{{ product.title }}</p>
-                  <p>{{ product.price }}</p>
                 </figure>
 
                 <div class="card-content">
@@ -329,7 +377,10 @@
                     <data value="65.00">&pound;65.00</data>
                   </div> -->
                 </div>
-
+              </div>
+              <div class="product">
+              <p class="text-center fs-4">{{ product.title }}</p>
+              <p class="text-center fw-bold fs-1 text-secondary">₹ {{ product.price }}</p>
               </div>
             </li>
 
@@ -729,20 +780,16 @@
 
               </div>
             </li> -->
-
           </ul>
-
-          <button class="btn btn-outline">View All Products</button>
-
         </div>
       </section>
-<!--      
+      <!--      
       logo -->
 
       <div class="whole1">
         <div class="part1">
           <img
-            src="images/2560px-Realme-realme-_logo_box-RGB-01.svg-removebg-preview.png"
+            src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.m.wikipedia.org%2Fwiki%2FFile%3ARealme-realme-_logo_box-RGB-01_with_out_back_ground.svg&psig=AOvVaw0AWfxMQ_ruUNP7A6sc7cne&ust=1701501159847000&source=images&cd=vfe&ved=0CBIQjRxqFwoTCIC06PPX7YIDFQAAAAAdAAAAABAE"
           />
         </div>
         <div class="part1">
@@ -762,7 +809,8 @@
         </div>
         <div class="part1">
           <img
-          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAgVBMVEX///8bFBoAAACioaIQAw5eXF7f3t/Kycq8u7xcWVz19PUXDxaKiIqWlJUNAAvj4uPT09NqaGo4NDcsJyuCgYJJRkmysbJ3dXcPAA0JAAbu7u5lYmS/vr8xLDBBPUDq6upST1IgGh/X19ebmpu0s7OQjpCGhIU+Oj17eXtPTE5wbnB6r9UzAAAFDElEQVR4nO2c65aiOhCFpcRWQbG9i5dWW51R3/8BjwoJ4WKo0h5p19nfTxbbKnYSEkhJrQYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcOMwHne8qpN4DzyHXJdoXXUeb8EmdC64q6rzeAc8cm7QR9WZvAEfyqxm1Zm8ATBLAMwSALMEwCwBMEsAzBIAswTALAEwSwDMEgCzBMAsATBLAMwSALMEwCwBc2XWpOpM3oHYrGBRdSLvwJePrsWmG3cth766dSuT5tzyO+vmxC6v778LhR8lslvopW2rzisNPWnaNkbnNv2kZ16kMsvxqZRV/U683bZcfKH/mVNOWUIip3vnevdjlv7UupN6fVWi7BgnLwKHzcXPotE6IfJZ+oA2md55oHKVCt0tCP09JJeld2mbbylW6mT0kDk33Vh6zgWcCn4hyKxRJMHpKxd6z2ylK36B2wtGfJ9SAQUJF7gl8eqqXxrankgbDjOhW8LQx4x+w9KTORrYQyHWpm9cE5n6ojdumdJu3U6Fllnt5Kb8EU9PKdGEQlFI81brSRN2/IEhH/DuODp06jYtFDuZ1L95qQebdHecn4kC9uhP9WZm66T0xkD8IMH8cjF6a4RePhB6ZOhPLK9Dyq2Y5pP+sHz6ViENYXKwFNV9XbOp1m3WzK9a0pwfxq6+nkdSX/NSX9hWl3eZ1/X6NekaunWpXvaj33omIGntnNdy1YNG0jX0DYCOPYv2Sm+nz03MrvNTf4RP9dT9Rx/qSN5aTEPByWnUTGDc8FQ70YGhV/OmsXzoBw9nw2LlZ8dRYxZdQ3ZSL0R1/EeeQ4/KaH1E9Yz8PaUIP0o96Osjg+iIn1+9/Qxxxkbzxs/hQX6pWkS+edmoFUoyhNWKh2wyzSJqVfekj4RR6qnHmZ8kHnRGP4qbJxxZVAmSgZOhlTMrn4yNeNC541wyopZbjkZ75qn/wqzWaHTvGdfkd5h1us6Pg/LzivN7zCwjv1v4v+XSX2HW8abJPEfc4+fNipYTVP6e9leYpSRlS5U7+T1plsee0X6DWbLdnR83Sz0KU9G7phQwC2ZZgFkwqxiYBbO4wCyYlQdmwaxiYBbMsgCzYFYxMAtmcYFZv94s/Q7+/2XW3+p6VrwVlip/uI/aCqvSrE1Ub5AqX7iLriPXRUvPmKW25Hn7htuoVWfJ2/7Xm6U3ijkfs9F7yLpW4hmz9BHO/ra+zmRL9fVmqY1if1j+fRZd9pZsTzxjli5lS9USFvPpqMKSZI/y9Wbpuh2fgk3DxkbX/fjJNuEzZtUcXYdEY2votpOULCXy15tlVIT5rh11njlunjJLl/Bf7pl2dJ1eaNRkVGDWZ5IxE99J1E+ZJSp1jtXrnPqVZtXO0pTNUM+ZJa/9NY2pwqzaQFS9m07uObPEVeUb8xflZsk+NhbP/ZlV1Zck5XQ5lA5fuvLQVYepo0dR6FNKG1fmSSrrov8YBLzyt3hVSZkaoQ675JgoU90UhQ/Tl1HI9jZDGBWaN/bEtSvIVq1FLe+LClxXFMzIZZagNonckHLPNr0zEQX2GWl2rSnOf7ZyeA3vMBLuEc0CGmcPe4drHfTMHju4nNPPlb70LymTsKK0vmjs2CevO+1z0c97y8O50bbRmO4K82KH97rtfmHVXXM3LQl9PiyLmmN5bv/BZzQBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwOU/R4tdtgYQoewAAAAASUVORK5CYII=">
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAgVBMVEX///8bFBoAAACioaIQAw5eXF7f3t/Kycq8u7xcWVz19PUXDxaKiIqWlJUNAAvj4uPT09NqaGo4NDcsJyuCgYJJRkmysbJ3dXcPAA0JAAbu7u5lYmS/vr8xLDBBPUDq6upST1IgGh/X19ebmpu0s7OQjpCGhIU+Oj17eXtPTE5wbnB6r9UzAAAFDElEQVR4nO2c65aiOhCFpcRWQbG9i5dWW51R3/8BjwoJ4WKo0h5p19nfTxbbKnYSEkhJrQYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcOMwHne8qpN4DzyHXJdoXXUeb8EmdC64q6rzeAc8cm7QR9WZvAEfyqxm1Zm8ATBLAMwSALMEwCwBMEsAzBIAswTALAEwSwDMEgCzBMAsATBLAMwSALMEwCwBc2XWpOpM3oHYrGBRdSLvwJePrsWmG3cth766dSuT5tzyO+vmxC6v778LhR8lslvopW2rzisNPWnaNkbnNv2kZ16kMsvxqZRV/U683bZcfKH/mVNOWUIip3vnevdjlv7UupN6fVWi7BgnLwKHzcXPotE6IfJZ+oA2md55oHKVCt0tCP09JJeld2mbbylW6mT0kDk33Vh6zgWcCn4hyKxRJMHpKxd6z2ylK36B2wtGfJ9SAQUJF7gl8eqqXxrankgbDjOhW8LQx4x+w9KTORrYQyHWpm9cE5n6ojdumdJu3U6Fllnt5Kb8EU9PKdGEQlFI81brSRN2/IEhH/DuODp06jYtFDuZ1L95qQebdHecn4kC9uhP9WZm66T0xkD8IMH8cjF6a4RePhB6ZOhPLK9Dyq2Y5pP+sHz6ViENYXKwFNV9XbOp1m3WzK9a0pwfxq6+nkdSX/NSX9hWl3eZ1/X6NekaunWpXvaj33omIGntnNdy1YNG0jX0DYCOPYv2Sm+nz03MrvNTf4RP9dT9Rx/qSN5aTEPByWnUTGDc8FQ70YGhV/OmsXzoBw9nw2LlZ8dRYxZdQ3ZSL0R1/EeeQ4/KaH1E9Yz8PaUIP0o96Osjg+iIn1+9/Qxxxkbzxs/hQX6pWkS+edmoFUoyhNWKh2wyzSJqVfekj4RR6qnHmZ8kHnRGP4qbJxxZVAmSgZOhlTMrn4yNeNC541wyopZbjkZ75qn/wqzWaHTvGdfkd5h1us6Pg/LzivN7zCwjv1v4v+XSX2HW8abJPEfc4+fNipYTVP6e9leYpSRlS5U7+T1plsee0X6DWbLdnR83Sz0KU9G7phQwC2ZZgFkwqxiYBbO4wCyYlQdmwaxiYBbMsgCzYFYxMAtmcYFZv94s/Q7+/2XW3+p6VrwVlip/uI/aCqvSrE1Ub5AqX7iLriPXRUvPmKW25Hn7htuoVWfJ2/7Xm6U3ijkfs9F7yLpW4hmz9BHO/ra+zmRL9fVmqY1if1j+fRZd9pZsTzxjli5lS9USFvPpqMKSZI/y9Wbpuh2fgk3DxkbX/fjJNuEzZtUcXYdEY2votpOULCXy15tlVIT5rh11njlunjJLl/Bf7pl2dJ1eaNRkVGDWZ5IxE99J1E+ZJSp1jtXrnPqVZtXO0pTNUM+ZJa/9NY2pwqzaQFS9m07uObPEVeUb8xflZsk+NhbP/ZlV1Zck5XQ5lA5fuvLQVYepo0dR6FNKG1fmSSrrov8YBLzyt3hVSZkaoQ675JgoU90UhQ/Tl1HI9jZDGBWaN/bEtSvIVq1FLe+LClxXFMzIZZagNonckHLPNr0zEQX2GWl2rSnOf7ZyeA3vMBLuEc0CGmcPe4drHfTMHju4nNPPlb70LymTsKK0vmjs2CevO+1z0c97y8O50bbRmO4K82KH97rtfmHVXXM3LQl9PiyLmmN5bv/BZzQBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwOU/R4tdtgYQoewAAAAASUVORK5CYII="
+          />
         </div>
         <div class="part1">
           <img
@@ -776,135 +824,119 @@
 
       <section class="section blog">
         <div class="container">
-
-          <h2 class="h2 section-title">Latest fashion news</h2>
+          <h2 class="h2 section-title">Latest news</h2>
 
           <ul class="blog-list">
-
             <li>
               <div class="blog-card">
-
                 <figure class="card-banner">
                   <a href="#">
-                    <img src="images/c2.png" alt="Worthy Cyber Monday Fashion From Casmart" loading="lazy"
-                      width="1020" height="700" class="w-100">
+                    <img
+                      src="data:image/webp;base64,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"
+                      alt="Worthy Cyber Monday Fashion From Casmart"
+                      loading="lazy"
+                      width="1020"
+                      height="700"
+                      class="w-100"
+                    />
                   </a>
                 </figure>
 
                 <div class="card-content">
-
                   <ul class="card-meta-list">
-
                     <li class="card-meta-item">
-                    
-
-                      <a href="#" class="card-meta-link">Fashion</a>
+                      <a href="#" class="card-meta-link">Gadget</a>
                     </li>
 
                     <li class="card-meta-item">
-                   
-
                       <a href="#" class="card-meta-link">
-                        <time datetime="2021-03-31">31 Mar 2021</time>
+                        <time datetime="2021-03-31">31 Dec 2023</time>
                       </a>
                     </li>
-
                   </ul>
 
                   <h3 class="h3 card-title">
-                    <a href="#">Worthy Cyber Monday Fashion From Casmart</a>
+                    <a href="#"> Monday Gadget From Casmart</a>
                   </h3>
-
                 </div>
-
               </div>
             </li>
 
             <li>
               <div class="blog-card">
-
                 <figure class="card-banner">
                   <a href="#">
-                    <img src="/nabvar/images/laptop2.png" alt="Holiday Home Decoration I’ve Recently Ordered"
-                      loading="lazy" width="1020" height="700" class="w-100">
+                    <img
+                      src="data:image/jpeg;base64,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"
+                      alt="Holiday Home Decoration I’ve Recently Ordered"
+                      loading="lazy"
+                      width="1020"
+                      height="700"
+                      class="w-100"
+                    />
                   </a>
                 </figure>
 
                 <div class="card-content">
-
                   <ul class="card-meta-list">
-
                     <li class="card-meta-item">
-                     
-
-                      <a href="#" class="card-meta-link">Fashion</a>
+                      <a href="#" class="card-meta-link">Gadget</a>
                     </li>
 
                     <li class="card-meta-item">
-                    
-
                       <a href="#" class="card-meta-link">
-                        <time datetime="2021-03-31">31 Mar 2021</time>
+                        <time datetime="2021-03-31">31 dec 2023</time>
                       </a>
                     </li>
-
                   </ul>
 
                   <h3 class="h3 card-title">
-                    <a href="#">Holiday Home Decoration I’ve Recently Ordered</a>
+                    <a href="#">Gadget I’ve Recently Ordered</a>
                   </h3>
-
                 </div>
-
               </div>
             </li>
 
             <li>
               <div class="blog-card">
-
                 <figure class="card-banner">
                   <a href="#">
-                    <img src="images/h1.png" alt="Unique Ideas for Fashion You Haven’t heard yet"
-                      loading="lazy" width="1020" height="700" class="w-100">
+                    <img
+                      src="/assets/images/c2.png"
+                      alt="Unique Ideas for Gadget You Haven’t heard yet"
+                      loading="lazy"
+                      width="1020"
+                      height="700"
+                      class="w-100"
+                    />
                   </a>
                 </figure>
 
                 <div class="card-content">
-
                   <ul class="card-meta-list">
-
                     <li class="card-meta-item">
-                     
-
-                      <a href="#" class="card-meta-link">Fashion</a>
+                      <a href="#" class="card-meta-link">Gadget</a>
                     </li>
 
                     <li class="card-meta-item">
-                     
-
                       <a href="#" class="card-meta-link">
-                        <time datetime="2021-03-31">31 Mar 2021</time>
+                        <time datetime="2021-03-31">31 dec 2023</time>
                       </a>
                     </li>
-
                   </ul>
 
                   <h3 class="h3 card-title">
-                    <a href="#">Unique Ideas for Fashion You Haven’t heard yet</a>
+                    <a href="#"
+                      >Unique Ideas for Gadget You Haven’t heard yet</a
+                    >
                   </h3>
-
                 </div>
-
               </div>
             </li>
-
           </ul>
-
         </div>
       </section>
-   
-  
-  
+
       <!-- 
         - #NEWSLETTER
       -->
@@ -940,7 +972,6 @@
 
         </div>
       </section> -->
-
     </article>
   </main>
 
@@ -949,53 +980,39 @@
   -->
 
   <footer class="footer">
-
     <div class="footer-top">
       <div class="container">
-
         <div class="footer-brand">
-
           <a href="#" class="logo">
-            <img src="images/logo.svg" alt="Casmart logo">
+            <img src="/assets/images/logo.svg" alt="Casmart logo" />
           </a>
 
           <p class="footer-text">
-            Casmart is a fashion theme for presents a complete wardrobe of uniquely crafted Ethnic Wear, Casuals, Edgy
-            Denims, &
-            Accessories inspired from the most contemporary
+            casmart is the buying and selling of goods and services over the
+            internet. It is conducted over computers, tablets, smartphones, and
+            other smart devices.
           </p>
 
           <ul class="social-list">
-
             <li>
-              <a href="#" class="social-link">
-              </a>
+              <a href="#" class="social-link"> </a>
             </li>
 
             <li>
-              <a href="#" class="social-link">
-                
-              </a>
+              <a href="#" class="social-link"> </a>
             </li>
 
             <li>
-              <a href="#" class="social-link">
-             
-              </a>
+              <a href="#" class="social-link"> </a>
             </li>
 
             <li>
-              <a href="#" class="social-link">
-             
-              </a>
+              <a href="#" class="social-link"> </a>
             </li>
-
           </ul>
-
         </div>
 
         <ul class="footer-list">
-
           <li>
             <p class="footer-list-title">Information</p>
           </li>
@@ -1023,11 +1040,9 @@
           <li>
             <a href="#" class="footer-link">Refund Policy</a>
           </li>
-
         </ul>
 
         <ul class="footer-list">
-
           <li>
             <p class="footer-list-title">Category</p>
           </li>
@@ -1055,11 +1070,9 @@
           <li>
             <a href="#" class="footer-link">Man & Woman Shoe</a>
           </li>
-
         </ul>
 
         <ul class="footer-list">
-
           <li>
             <p class="footer-list-title">Help & Support</p>
           </li>
@@ -1087,21 +1100,15 @@
           <li>
             <a href="#" class="footer-link">List of Shops</a>
           </li>
-
         </ul>
-
       </div>
     </div>
 
     <div class="footer-bottom">
       <div class="container">
-
-        <p class="copyright">
-          &copy; 2023  All Rights Reserved
-        </p>
+        <p class="copyright">&copy; 2023 All Rights Reserved</p>
 
         <ul class="footer-bottom-list">
-
           <li>
             <a href="#" class="footer-bottom-link">Privacy Policy</a>
           </li>
@@ -1113,21 +1120,18 @@
           <li>
             <a href="#" class="footer-bottom-link">Sitemap</a>
           </li>
-
         </ul>
 
         <div class="payment">
           <p class="payment-title">We Support</p>
 
-          <img src="images/payment-img.png" alt="Online payment logos" class="payment-img">
+          <img
+            src="images/payment-img.png"
+            alt="Online payment logos"
+            class="payment-img"
+          />
         </div>
-
       </div>
     </div>
-
   </footer>
-
-
-
 </body>
-

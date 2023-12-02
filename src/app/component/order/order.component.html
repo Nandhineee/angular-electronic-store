@@ -1,24 +1,24 @@
-<section class="vh-100 gradient-custom-2">
+<!-- <section class="vh-100 gradient-custom-2">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-md-10 col-lg-8 col-xl-6">
         <div class="card card-stepper" style="border-radius: 16px;">
           <div class="card-header p-4">
             <div class="d-flex justify-content-between align-items-center">
-              <div>
-                <p class="text-muted mb-2"> Order ID <span class="fw-bold text-body">1222528743</span></p>
-                <p class="text-muted mb-0"> Place On <span class="fw-bold text-body">12,March 2019</span> </p>
-              </div>
-              <div>
+              <div *ngFor="let item of orderDetails">
+                <p class="text-muted mb-2"> Order ID <span class="fw-bold text-body">{{ item.id }}</span></p>
+                <!-- <p class="text-muted mb-0"> Place On <span class="fw-bold text-body">12,March 2019</span> </p> -->
+<!-- </div> -->
+<!-- <div>
                 <h6 class="mb-0"> <a href="#">View Details</a> </h6>
-              </div>
-            </div>
+              </div> -->
+<!-- </div>
           </div>
-          <div class="card-body p-4">
+          <div class="card-body p-4"*ngFor="let gadget of item.orderedGadgetList">
             <div class="d-flex flex-row mb-4 pb-2">
               <div class="flex-fill">
-                <h5 class="bold">Headphones Bose 35 II</h5>
-                <p class="text-muted"> Qt: 1 item</p>
+                <h5 class="bold">{{ gadget.title }}</h5>
+                <p class="text-muted">{{ gadget.count }}</p>
                 <h4 class="mb-3"> $ 299 <span class="small text-muted"> via (COD) </span></h4>
                 <p class="text-muted">Tracking Status on: <span class="text-body">11:30pm, Today</span></p>
               </div>
@@ -51,4 +51,86 @@
       </div>
     </div>
   </div>
-</section>
+</section> - -->
+<div class="header">
+<table>
+  <thead>
+    <tr>
+      <th>Order ID</th>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let item of orderDetails">
+    <tr *ngFor="let gadget of item.gadgetList">
+      <td>{{ item.id }}</td>
+      <td>{{ gadget.title }}</td>
+      <td>{{ gadget.count }}</td>
+      <td>{{ gadget.count }}</td>
+      <td>{{ gadget.price * gadget.count }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="container py-5 h-100">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-12">
+      <div class="card card-stepper text-black" style="border-radius: 16px">
+        <!-- <div class="card-body p-5">
+
+            <div class="d-flex justify-content-between align-items-center mb-5">
+              <div>
+                <h5 class="mb-0">INVOICE <span class="text-primary font-weight-bold">#Y34XDHR</span></h5>
+              </div>
+              <div class="text-end">
+                <p class="mb-0">Expected Arrival <span>01/12/19</span></p>
+                <p class="mb-0">USPS <span class="font-weight-bold">234094567242423422898</span></p>
+              </div>-->
+
+        <ul
+          id="progressbar-2"
+          class="d-flex justify-content-between mx-0 mt-0 mb-5 px-0 pt-0 pb-2"
+        >
+          <li class="step0 active text-center" id="step1"></li>
+          <li class="step0 active text-center" id="step2"></li>
+          <li class="step0 active text-center" id="step3"></li>
+          <li class="step0 text-muted text-end" id="step4"></li>
+        </ul>
+
+        <div class="d-flex justify-content-between">
+          <div class="d-lg-flex align-items-center">
+            <i class="fas fa-clipboard-list fa-3x me-lg-4 mb-3 mb-lg-0"></i>
+            <div>
+              <p class="fw-bold mb-1">Order</p>
+              <p class="fw-bold mb-0">Processed</p>
+            </div>
+          </div>
+          <div class="d-lg-flex align-items-center">
+            <i class="fas fa-box-open fa-3x me-lg-4 mb-3 mb-lg-0"></i>
+            <div>
+              <p class="fw-bold mb-1">Order</p>
+              <p class="fw-bold mb-0">Shipped</p>
+            </div>
+          </div>
+          <div class="d-lg-flex align-items-center">
+            <i class="fas fa-shipping-fast fa-3x me-lg-4 mb-3 mb-lg-0"></i>
+            <div>
+              <p class="fw-bold mb-1">Order</p>
+              <p class="fw-bold mb-0">En Route</p>
+            </div>
+          </div>
+          <div class="d-lg-flex align-items-center">
+            <i class="fas fa-home fa-3x me-lg-4 mb-3 mb-lg-0"></i>
+            <div>
+              <p class="fw-bold mb-1">Order</p>
+              <p class="fw-bold mb-0">Arrived</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

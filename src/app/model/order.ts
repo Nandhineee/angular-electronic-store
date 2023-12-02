@@ -4,7 +4,7 @@ export interface Order {
     username: String;
     createdAt?: Date;
     addressId?:number;
-    orderedGadgetList: {
+    gadgetList: {
       id?: number;
       title: String;
       description?: string;

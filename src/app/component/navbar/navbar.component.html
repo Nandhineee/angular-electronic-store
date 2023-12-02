@@ -1,24 +1,25 @@
 <header class="nav" *ngIf="isAdmin">
   <div id="header">
     <div class="header-logo">
-      <a href="indext.html"><img src="/src/assets/images/logo.svg" alt="" /></a>
+      <a href="indext.html"><img src="/assets/images/logo.svg" alt="" /></a>
     </div>
     <div class="header-list">
       <nav class="header-list-nav">
         <ul>
-          <li><a class="fa-solid fa-house"></a></li>
+          <li><a class="fa-solid fa-clock-rotate-left"  routerLink="/adminorder"
+            routerLinkActive="active"></a></li>
 
           <li>
             <a
               class="fa-solid fa-user"
-              routerLink="/login"
+              routerLink="/adminview"
               routerLinkActive="active"
             ></a>
           </li>
           <li>
             <a
-              class="fa-solid fa-cart-shopping"
-              routerLink="/cart"
+              class="fa-solid fa-book"
+              routerLink="/adminproduct"
               routerLinkActive="active"
             ></a>
           </li>

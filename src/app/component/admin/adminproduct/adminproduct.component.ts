@@ -39,7 +39,7 @@ export class AdminproductComponent implements OnInit {
     console.log(id);
     this.productService.deleteProduct(id).subscribe({
       next: (response: any) => {
-        this.products = response;
+        this.products = response.data;
         console.log(response);
       },
       error: (err) => {
@@ -61,7 +61,16 @@ export class AdminproductComponent implements OnInit {
       categoryId: 1,
     };
     this.productService.postProduct(mappedProduct)
-      .subscribe((response) => console.log(response));
+      .subscribe({
+        next: (response: any) => {
+          this.products = response.data;
+          console.log(response);
+        },
+        error: (err) => {
+          console.log(err?.error?.error?.message);
+        },
+  
+      })
   }
 
   }

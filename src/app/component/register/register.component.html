@@ -103,7 +103,7 @@
             <div class="formbg">
               <div class="formbg-inner padding-horizontal--48">
                 <span class="padding-bottom--15">Sign up to your account</span>
-                <div class="field padding-bottom--24">
+                <div class="field padding-top--24">
                   <label for="email">User Name</label>
                   <input
                     type="email"
@@ -122,16 +122,19 @@
                     "
                   />
 
-                  <div *ngIf="modelUsername.invalid" class="invalid-feedback">
+                  <div *ngIf="modelUsername.invalid" class="invalid-feedback  text-danger">
                     Please enter a valid Username
                   </div>
 
-                  <div class="error">Error</div>
+                 <p class="error" [ngClass]="error.length > 0 ? 'visible' : 'invisible'">
+                    {{ error }}
+                  </p>
                 </div>
+              
 
                 <!-- Name -->
 
-                <div class="field padding-bottom--24">
+                <div class="field padding-bottom--1">
                   <label for="email"> Name</label>
                   <input
                     type="text"
@@ -148,10 +151,12 @@
                     "
                   />
 
-                  <div *ngIf="modelName.invalid" class="invalid-feedback">
+                  <div *ngIf="modelName.invalid" class="invalid-feedback text-danger">
                     Please enter a valid Name
                   </div>
-                  <div class="error">Error</div>
+                  <p class="error" [ngClass]="error.length > 0 ? 'visible' : 'invisible'">
+                    {{ error }}
+                  </p>
                 </div>
                 <!-- password -->
 
@@ -184,17 +189,21 @@
                 </div>
                 <div
                   *ngIf="modelPassword.errors?.['minlength']"
-                  class="invalid-feedback"
+                  class="invalid-feedback text-danger"
                 >
                   password should atleast
                   {{modelPassword?.errors?.['minlength']?.['requiredLength']}}
                   characters.
                 </div>
-                <div class="error">Error</div>
+                <p class="error" [ngClass]="error.length > 0 ? 'visible' : 'invisible'">
+                  {{ error }}
+                </p>
               </div>
+                <!-- <div class="error">Error</div>
+  
 
               <!-- confirm password  -->
-              <div class="field padding-bottom--24">
+              <!-- <div class="field padding-bottom--24">
                 <div class="grid--50-50">
                   <label for="password">Confirm Password</label>
                   <input
@@ -229,7 +238,7 @@
                   characters.
                 </div>
                 <div class="error">Error</div>
-              </div>
+              </div> -->
 
               <!-- <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
                       <label for="checkbox">
@@ -241,6 +250,11 @@
                       Login
                     </button>
                   </div> -->
+                  <div class="footer-link padding-top--0" style="margin-top: 0">
+                    <span class=""
+                      >Don't have an account? <a href="/login">Sign in</a></span
+                    >
+                  </div>
 
               <div class="button-design">
                 <div class="field padding-bottom--24">

@@ -10,7 +10,7 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Username</th>
-                    <th>Joined At</th>
+                    
                 </tr>
             </thead>
             <tbody    
@@ -23,27 +23,25 @@
                     <td>{{user.id}}</td>
                     <td>{{user.username}}</td>
                     <td>{{user.name}}</td>
-                    <td>{{user.joinedAt}}</td>
+                  
                 </tr>
               
                 <!-- Add more rows as needed -->
             </tbody>
         </table>
-
-       
-        <div class="col-6">
-            <p>Address</p>
-            <div class="" *ngFor="let address of userDetail.addressList">
-              <div>
-                <p>Address:{{ address.address }}</p>
-              </div>
-              <div>
-                <p>City:{{ address.city }}</p>
-              </div>
-              <div>
-                <p>Pincode:{{ address.pincode }}</p>
-              </div>
-            </div>
+        
+        <div class="card  "  *ngFor="let address of userDetail.addressList">
+          <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="width:100">
+          <div class="container ">
+            <div style="text-align: center;">
+            <h4><b><p>Address: {{ address.address }}</p></b></h4> 
+          
+            <br>
+             <p>City: {{ address.city }}</p>
+             <br>
+            <p>Pincode: {{ address.pincode }}
+              <br>
           </div>
-        </div>
-    
+
+
+     

@@ -16,7 +16,7 @@
     </div>
   
     <div *ngIf="isAdmin" class="row flex-grow-1">
-      <div class="sidebar border-right col-2 p-0">
+      <!-- <div class="sidebar border-right col-2 p-0">
         <div class="bg-body-tertiary h-100" tabindex="-1">
           <div class="d-flex flex-column p-0 pt-3 overflow-y-auto">
             <ul class="nav flex-column gap-2">
@@ -35,13 +35,7 @@
                 <i class="fa-solid fa-book"></i>
                 <a class="nav-link d-flex align-items-center">Products</a>
               </li>
-              <!-- <li
-                class="nav-item d-flex align-items-center px-4 sideBarItem"
-                routerLinkActive="active"routerLink="/admincategory" 
-              >
-                <i class="fa-solid fa-copyright"></i>
-                <a class="nav-link d-flex align-items-center">Categories</a>
-              </li> -->
+             
               <li
                 class="nav-item d-flex align-items-center px-4 sideBarItem"
                 routerLinkActive="active"routerLink="/adminorder" 
@@ -59,8 +53,8 @@
             </ul>
           </div>
         </div>
-      </div>
-      <main class="col-10 px-4">
+      </div> -->
+      <main class="col-12 px-4">
         <router-outlet></router-outlet>
       </main>
     </div>
