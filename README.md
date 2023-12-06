@@ -59,8 +59,8 @@
 
 **Repository Link**
 
-    🔗 Front end-https://github.com/Nandhineee/angular-electronic-store   
-    🔗 Back end-Nandhineee/Electronic-Gadget-Store
+    🔗 Front end- https://github.com/Nandhineee/angular-electronic-store   
+    🔗 Back end- Nandhineee/Electronic-Gadget-Store
 
 
 **MySQL Schema**
@@ -70,7 +70,7 @@
 
 Demo Video Url
   
-    🔗 url of demo video-https://drive.google.com/file/d/1i6JdxUvvfWXkKk-wOrXQQl3moPI3RVOp/view
+    🔗 url of demo video- https://drive.google.com/file/d/1i6JdxUvvfWXkKk-wOrXQQl3moPI3RVOp/view
   
   
   
