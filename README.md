@@ -65,15 +65,12 @@
 
 **MySQL Schema**
 
-
-
-
-
+![ER diagram](https://github.com/Nandhineee/angular-electronic-store/assets/145537963/55fb48e3-1623-40d1-acd8-9c8a4e5a80bb)
 
 
 Demo Video Url
   
-    🔗 url of demo video
+    🔗 url of demo video-https://drive.google.com/file/d/1i6JdxUvvfWXkKk-wOrXQQl3moPI3RVOp/view
   
   
   
@@ -97,14 +94,4 @@ Demo Video Url
 
 
 
-➡️ Demo Video Url -
 
-
-
-
-
-
-
-
-
-🔴 some logic missing
