@@ -122,15 +122,20 @@
                     "
                   />
 
-                  <div *ngIf="modelUsername.invalid" class="invalid-feedback  text-danger">
+                  <div
+                    *ngIf="modelUsername.invalid"
+                    class="invalid-feedback text-danger"
+                  >
                     Please enter a valid Username
                   </div>
 
-                 <p class="error" [ngClass]="error.length > 0 ? 'visible' : 'invisible'">
+                  <p
+                    class="error"
+                    [ngClass]="error.length > 0 ? 'visible' : 'invisible'"
+                  >
                     {{ error }}
                   </p>
                 </div>
-              
 
                 <!-- Name -->
 
@@ -151,10 +156,16 @@
                     "
                   />
 
-                  <div *ngIf="modelName.invalid" class="invalid-feedback text-danger">
+                  <div
+                    *ngIf="modelName.invalid"
+                    class="invalid-feedback text-danger"
+                  >
                     Please enter a valid Name
                   </div>
-                  <p class="error" [ngClass]="error.length > 0 ? 'visible' : 'invisible'">
+                  <p
+                    class="error"
+                    [ngClass]="error.length > 0 ? 'visible' : 'invisible'"
+                  >
                     {{ error }}
                   </p>
                 </div>
@@ -195,11 +206,14 @@
                   {{modelPassword?.errors?.['minlength']?.['requiredLength']}}
                   characters.
                 </div>
-                <p class="error" [ngClass]="error.length > 0 ? 'visible' : 'invisible'">
+                <p
+                  class="error"
+                  [ngClass]="error.length > 0 ? 'visible' : 'invisible'"
+                >
                   {{ error }}
                 </p>
               </div>
-                <!-- <div class="error">Error</div>
+              <!-- <div class="error">Error</div>
   
 
               <!-- confirm password  -->
@@ -250,15 +264,20 @@
                       Login
                     </button>
                   </div> -->
-                  <div class="footer-link padding-top--0" style="margin-top: 0">
-                    <span class=""
-                      >Don't have an account? <a href="/login">Sign in</a></span
-                    >
-                  </div>
+              <div class="footer-link padding-top--0" style="margin-top: 0">
+                <span class=""
+                  >Don't have an account? <a href="/login">Sign in</a></span
+                >
+              </div>
 
               <div class="button-design">
                 <div class="field padding-bottom--24">
-                  <input type="submit"(click)="register(registerForm)"name="submit" value="Continue" />
+                  <input
+                    type="submit"
+                    (click)="register(registerForm)"
+                    name="submit"
+                    value="Continue"
+                  />
                 </div>
               </div>
             </div>

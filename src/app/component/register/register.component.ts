@@ -47,7 +47,7 @@ export class RegisterComponent {
   //  }
   constructor(private registerService: RegisterService, private router: Router) {}
   confirmPassword: string = '';
-  error: string = '';
+  error: string = ''; 
   user: Register = {
     name: '',
     username: '',

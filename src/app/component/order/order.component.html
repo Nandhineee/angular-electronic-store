@@ -1,73 +1,71 @@
-
 <div class="header">
-<table>
-  <thead>
-    <tr>
-      <th>Order ID</th>
-      <th>Title</th>
-      <th>Date</th>
-      <th>Quantity</th>
-      <th>Price</th>
-    </tr>
-  </thead>
-  <tbody *ngFor="let item of orderDetails">
-    <tr *ngFor="let gadget of item.gadgetList">
-      <td>{{ item.id }}</td>
-      <td>{{ gadget.title }}</td>
-      <td>{{ gadget.count }}</td>
-      <td>{{ gadget.count }}</td>
-      <td>{{ gadget.price * gadget.count }}</td>
-    </tr>
-  </tbody>
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of orderDetails">
+      <tr *ngFor="let gadget of item.gadgetList">
+        <td>{{ item.id }}</td>
+        <td>{{ gadget.title }}</td>
+        <td>{{ gadget.count }}</td>
+        <td>{{ gadget.count }}</td>
+        <td>{{ gadget.price * gadget.count }}</td>
+      </tr>
+    </tbody>
+  </table>
 
-<div class="container py-5 h-100">
-  <div class="row d-flex justify-content-center align-items-center h-100">
-    <div class="col-12">
-      <div class="card card-stepper text-black" style="border-radius: 16px">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12">
+        <div class="card card-stepper text-black" style="border-radius: 16px">
+          <ul
+            id="progressbar-2"
+            class="d-flex justify-content-between mx-0 mt-0 mb-5 px-0 pt-0 pb-2"
+          >
+            <li class="step0 active text-center" id="step1"></li>
+            <li class="step0 active text-center" id="step2"></li>
+            <li class="step0 active text-center" id="step3"></li>
+            <li class="step0 text-muted text-end" id="step4"></li>
+          </ul>
 
-        <ul
-          id="progressbar-2"
-          class="d-flex justify-content-between mx-0 mt-0 mb-5 px-0 pt-0 pb-2"
-        >
-          <li class="step0 active text-center" id="step1"></li>
-          <li class="step0 active text-center" id="step2"></li>
-          <li class="step0 active text-center" id="step3"></li>
-          <li class="step0 text-muted text-end" id="step4"></li>
-        </ul>
-
-        <div class="d-flex justify-content-between">
-          <div class="d-lg-flex align-items-center">
-            <i class="fas fa-clipboard-list fa-3x me-lg-4 mb-3 mb-lg-0"></i>
-            <div>
-              <p class="fw-bold mb-1">Order</p>
-              <p class="fw-bold mb-0">Processed</p>
+          <div class="d-flex justify-content-between">
+            <div class="d-lg-flex align-items-center">
+              <i class="fas fa-clipboard-list fa-3x me-lg-4 mb-3 mb-lg-0"></i>
+              <div>
+                <p class="fw-bold mb-1">Order</p>
+                <p class="fw-bold mb-0">Processed</p>
+              </div>
             </div>
-          </div>
-          <div class="d-lg-flex align-items-center">
-            <i class="fas fa-box-open fa-3x me-lg-4 mb-3 mb-lg-0"></i>
-            <div>
-              <p class="fw-bold mb-1">Order</p>
-              <p class="fw-bold mb-0">Shipped</p>
+            <div class="d-lg-flex align-items-center">
+              <i class="fas fa-box-open fa-3x me-lg-4 mb-3 mb-lg-0"></i>
+              <div>
+                <p class="fw-bold mb-1">Order</p>
+                <p class="fw-bold mb-0">Shipped</p>
+              </div>
             </div>
-          </div>
-          <div class="d-lg-flex align-items-center">
-            <i class="fas fa-shipping-fast fa-3x me-lg-4 mb-3 mb-lg-0"></i>
-            <div>
-              <p class="fw-bold mb-1">Order</p>
-              <p class="fw-bold mb-0">En Route</p>
+            <div class="d-lg-flex align-items-center">
+              <i class="fas fa-shipping-fast fa-3x me-lg-4 mb-3 mb-lg-0"></i>
+              <div>
+                <p class="fw-bold mb-1">Order</p>
+                <p class="fw-bold mb-0">En Route</p>
+              </div>
             </div>
-          </div>
-          <div class="d-lg-flex align-items-center">
-            <i class="fas fa-home fa-3x me-lg-4 mb-3 mb-lg-0"></i>
-            <div>
-              <p class="fw-bold mb-1">Order</p>
-              <p class="fw-bold mb-0">Arrived</p>
+            <div class="d-lg-flex align-items-center">
+              <i class="fas fa-home fa-3x me-lg-4 mb-3 mb-lg-0"></i>
+              <div>
+                <p class="fw-bold mb-1">Order</p>
+                <p class="fw-bold mb-0">Arrived</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
