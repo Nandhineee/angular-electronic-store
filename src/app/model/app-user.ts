@@ -1,6 +1,6 @@
-export interface AppUser {
-    id:number;
-    username:string;
-    name:string;
+// export interface AppUser {
+//     id:number;
+//     username:string;
+//     name:string;
     
-}
+// }

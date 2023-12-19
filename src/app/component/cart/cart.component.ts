@@ -3,18 +3,25 @@ import { Cart } from 'src/app/model/cart';
 import { Order } from 'src/app/model/order';
 import { CartService } from 'src/app/service/cart.service';
 import { OrderService } from 'src/app/service/order.service';
+import { ProductService } from 'src/app/service/product.service';
 import { StorageService } from 'src/app/service/storage.service';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
   carts: Cart[] = [];
+  total: number = 0;
 
 
-  constructor(private cartService:CartService,private storageService:StorageService,private orderService:OrderService){}
+  constructor(
+    private cartService: CartService,
+    private storageService: StorageService,
+    private orderService: OrderService,
+    private productService: ProductService
+  ) {}
 
   ngOnInit(): void {
     let loggedInUser = this.storageService.getLoggedInUser();
@@ -23,18 +30,16 @@ export class CartComponent implements OnInit {
       next: (carts: any) => {
         let cartDetails: Cart[] = carts.data;
         this.carts = cartDetails;
-        console.log(carts);
-}
+      },
     });
   }
-  
-  onDelete(deleteid: any, productId: any): void {
+
+  onDelete(deleteid: number, productId: number): void {
     console.log(deleteid, productId);
 
     this.cartService.deleteCart(deleteid, productId).subscribe({
-      next: (cart: Cart[]) => {
-        this.carts = cart;
-        console.log(cart);
+      next: (cart: any) => {
+        this.carts = cart.data;
       },
       complete: () => console.log('deleted'),
       error: () => console.log('error'),
@@ -42,10 +47,9 @@ export class CartComponent implements OnInit {
   }
   cartItem: Cart[] = this.storageService.getCart()!;
   orders: Order[] = [];
-  addressId: number = 64;
+  addressId: number = 1;
 
   checkOut() {
-    
     for (let item of this.carts) {
       this.orders.push({
         id: 0,
@@ -64,7 +68,11 @@ export class CartComponent implements OnInit {
       console.log('order', this.orders);
 
       this.orderService
-        .createOrder(item.userId, item.gadgetId, this.addressId)
+        .createOrder(
+          this.storageService.getLoggedInUser().id,
+          item.gadgetId,
+          this.addressId
+        )
         .subscribe({
           next: (response: Order[]) => {
             console.log('response', response);
@@ -78,6 +86,33 @@ export class CartComponent implements OnInit {
     return this.orders;
   }
 
+  cartcount(cartId: number, count: number): void {}
 
-  
+  decrement(cartid: number, count: number, gadgetId: number) {
+    this.productService
+      .incrementAndDecrement(
+        this.storageService.getLoggedInUser().id,
+        gadgetId,
+        count-1
+      )
+      .subscribe({
+        next: (response: any) => {
+          this.carts = response.data;
+        },
+      });
+  }
+
+  increment(cartid: number, count: number, gadgetId: number) {
+    this.productService
+      .incrementAndDecrement(
+        this.storageService.getLoggedInUser().id,
+        gadgetId,
+        count+1
+      )
+      .subscribe({
+        next: (response: any) => {
+          this.carts = response.data;
+        },
+      });
+  }
 }

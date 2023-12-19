@@ -74,19 +74,19 @@ export class HomeComponent implements OnInit {
     );
     // this.ngOnInit();
   }
-  onDelete(deleteid: number, productId: number): void {
-    console.log(deleteid, productId);
+  // onDelete(deleteid: number, productId: number): void {
+  //   console.log(deleteid, productId);
 
-    this.cartService.deleteCart(deleteid, productId).subscribe({
-      next: (cart: Cart[]) => {
-        this.carts = cart;
-        console.log(cart);
-      },
-      complete: () => console.log('deleted'),
-      error: () => console.log('error'),
-    });
-    this.ngOnInit();
-  }
+  //   this.cartService.deleteCart(deleteid, productId).subscribe({
+  //     next: (cart: Cart[]) => {
+  //       this.carts = cart;
+  //       console.log(cart);
+  //     },
+  //     complete: () => console.log('deleted'),
+  //     error: () => console.log('error'),
+  //   });
+  //   this.ngOnInit();
+  // }
   increamentCount(cart: Cart) {
     //add product only 3
     if (cart.count != 3) {
@@ -103,42 +103,42 @@ export class HomeComponent implements OnInit {
         .subscribe((response) => console.log(response));
     }
   }
-  cartItem: Cart[] = this.stoargeService.getCart()!;
-  orders: Order[] = [];
-  addressId: number = 64;
+  // cartItem: Cart[] = this.stoargeService.getCart()!;
+  // orders: Order[] = [];
+  // addressId: number = 64;
 
-  checkOut(): Order[] {
-    for (let item of this.cartItem) {
-      this.orders.push({
-        id: 0,
-        total: item.total,
-        username: this.stoargeService.getLoggedInUser().username,
-        gadgetList: [
-          {
-            id: item.gadgetId,
-            title: item.title,
-            price: item.price,
-            count: item.count,
-          },
-        ],
-      });
+  // checkOut(): Order[] {
+  //   for (let item of this.cartItem) {
+  //     this.orders.push({
+  //       id: 0,
+  //       total: item.total,
+  //       username: this.stoargeService.getLoggedInUser().username,
+  //       gadgetList: [
+  //         {
+  //           id: item.gadgetId,
+  //           title: item.title,
+  //           price: item.price,
+  //           count: item.count,
+  //         },
+  //       ],
+  //     });
 
-      //console.log('order', this.orders);
+  //     //console.log('order', this.orders);
 
-      this.orderService
-        .createOrder(item.userId, item.gadgetId, this.addressId)
-        .subscribe({
-          next: (response: Order[]) => {
-            console.log('response', response);
-            this.orders = response;
-          },
-          complete: () => console.log('orderCreated'),
-          error: () => console.log('error'),
-        });
-    }
-    this.stoargeService.setOrder(this.orders);
-    return this.orders;
-  }
+  //     this.orderService
+  //       .createOrder(item.userId, item.gadgetId, this.addressId)
+  //       .subscribe({
+  //         next: (response: Order[]) => {
+  //           console.log('response', response);
+  //           this.orders = response;
+  //         },
+  //         complete: () => console.log('orderCreated'),
+  //         error: () => console.log('error'),
+  //       });
+  //   }
+  //   this.stoargeService.setOrder(this.orders);
+  //   return this.orders;
+  // }
 }
 
 

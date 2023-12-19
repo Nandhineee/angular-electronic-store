@@ -29,7 +29,8 @@ export class OrderComponent {
   ngOnInit(): void {
     this.orderService.fetchdata(this.user?.id).subscribe({
       next: (orders: any) => {
-
+        console.log("dsjkjdg",orders.data);
+        
         this.orderDetails = orders.data;
         console.log("user oders",this.orderDetails);
 

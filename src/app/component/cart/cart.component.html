@@ -1,35 +1,76 @@
 <header>
-    <h1>Your Shopping Cart</h1>
-  </header>
+  <h1>Your Shopping Cart</h1>
+</header>
 
-  <div class="container">
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cart of carts">
+        <td class="cart-item">
+          <img
+            src="assets/images/laptop2.png"
+            alt="Product 1"
+            class="product-image"
+          />
+        </td>
+        <td>{{ cart.title }}</td>
+        <td class="quantity">
+          <div class="container mt-4">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  id="minusBtn"
+                  (click)="decrement(cart.id,cart.count,cart.gadgetId)"
+                >
+                  -
+                </button>
+              </div>
+              <input
+                type="text"
+                class="form-control text-center"
+                [value]="cart.count"
+                id="numberInput"
+              />
+              <div class="input-group-append">
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  id="plusBtn"
+                  (click)="increment(cart.id,cart.count,cart.gadgetId)"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="total-price">{{ cart.price*cart.count }}</td>
+        <td class="" (click)="onDelete(cart.userId, cart.gadgetId)">
+          <i class="fa-solid fa-trash"></i>
+        </td>
+      </tr>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Product</th>
-          <th>Price</th>
-          <th>Quantity</th>
-          <th>Total</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let cart of carts">
-          <td class="cart-item" >
-            <img src="https://i.ibb.co/rygRLTd/product02.png" alt="Product 1" class="product-image">
-          </td>
-          <td>{{cart.title}}</td>
-          <td class="quantity"><input type="number" value="2" min="10"></td>
-          <td class="total-price">{{cart.price}}</td>
-        </tr>
-        
+      <!-- Add more rows for additional products -->
+    </tbody>
+  </table>
 
-      
-        <!-- Add more rows for additional products -->
-      </tbody>
-    </table>
-
-    <a href="#" class="checkout-btn"routerLink="/order"
-    routerLinkActive="active" (click)="checkOut()" >Proceed to Checkout</a>
-
-  </div>
+  <a
+    href="#"
+    class="checkout-btn"
+    routerLink="/order"
+    routerLinkActive="active"
+    (click)="checkOut()"
+    >Proceed to Checkout</a
+  >
+</div>

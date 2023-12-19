@@ -69,10 +69,16 @@
           <td>{{ product.price }}</td>
           <td>{{ product.description }}</td>
 
-          <td>
+          <!-- <td>
             
             <button class="del" (click)="onDelete(product.id!)">Delete</button>
-          </td>
+          </td> -->
+          <td
+          class=""
+          (click)="onDelete(product.id!)"
+        >
+          <i class="fa-solid fa-trash"></i>
+        </td>
         </tr>
         <!-- Add more rows as needed -->
       </tbody>

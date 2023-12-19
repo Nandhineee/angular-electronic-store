@@ -35,15 +35,25 @@ export class ProductService {
  
 
   addToCart(userId: number, productId: number): Observable<Cart[]> {
-    let count: number = 1;
     const requestData = {
       userId: userId,
       gadgetId: productId,
-      count: count,
     };
     console.log(requestData);
  
     return this.http.post<Cart[]>(`${urlEndpoint.baseUrl}/cart`, requestData);
+  }
+
+  incrementAndDecrement(userId:number,productId:number,count:number):Observable<AppResponse>{
+    const requestData = {
+      userId: userId,
+      gadgetId: productId,
+      count:count
+    };
+    console.log(requestData);
+ 
+    return this.http.post<AppResponse>(`${urlEndpoint.baseUrl}/cart`, requestData);
+
   }
 }  
 

@@ -12,6 +12,7 @@ export class OrderService {
   constructor(private http: HttpClient) { }
 
   fetchdata(userId:number): Observable<Order[]> {
+    
     return this.http.get<Order[]>(`${urlEndpoint.baseUrl}/order/${userId}`);
   }
 
@@ -21,9 +22,9 @@ export class OrderService {
 
 
   
-  createOrder(userId:number,artworkId:number,addressId:number):Observable<Order[]>{
+  createOrder(userId:number,id:number,addressId:number):Observable<Order[]>{
     let orderdata={
-      userId:1,
+      userId:userId,
       addressId:1
     }
     console.log("changes userid and addressid");

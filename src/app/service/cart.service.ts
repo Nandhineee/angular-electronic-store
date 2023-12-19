@@ -17,7 +17,7 @@ export class CartService {
 
   deleteCart(id: number, productId: number): Observable<Cart[]> {
     return this.http.delete<Cart[]>(
-      `${urlEndpoint.baseUrl}/admin/artWork/${id}/${productId}`
+      `${urlEndpoint.baseUrl}/cart/${id}/${productId}`
     );
   }
   cartCountUpdate(
