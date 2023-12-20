@@ -106,7 +106,7 @@ private isAdminSubject = new BehaviorSubject<boolean>(false);
     this.isAdminSubject.next(false);
     this.isLoggedInSubject.next(false);
     this.storageService.removeLoggedInUser();
-    this.router.navigate(['/login'], { replaceUrl: true });
+    this.router.navigate(['/'], { replaceUrl: true });
   }
 
   isAdmin(): boolean {
@@ -123,7 +123,7 @@ private isAdminSubject = new BehaviorSubject<boolean>(false);
 
     let route:string | null=this.storageService.getRoute();
     if (user.role === CONSTANT.USER) {
-      if(route===null) route="";
+      if(route===null) route="/home";
       this.router.navigate(["/" + route], { replaceUrl: true });
     } else if (user.role === CONSTANT.ADMIN) {
       if(route===null) route= "/adminproduct";

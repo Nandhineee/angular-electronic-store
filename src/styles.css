@@ -163,12 +163,12 @@ body {
   }
   
   .btn {
-    background: var(--background, var(--eerie-black));
-    color: var(--color, var(--white));
+    /* background: gray; */
+    color: black;
     font-weight: var(--fw-600);
-    height: var(--height, 60px);
-    padding-inline: 50px;
-    border: 1px solid var(--border-color, var(--eerie-black));
+    /* height: var(--height, 60px); */ 
+    /* padding-inline: 50px; */
+    /* border: 1px solid var(--border-color, var(--eerie-black)); */
     border-radius: 6px;
     display: flex;
     justify-content: center;

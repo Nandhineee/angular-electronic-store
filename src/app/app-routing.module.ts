@@ -14,9 +14,9 @@ import { AdminorderComponent } from './component/admin/adminorder/adminorder.com
 import { HomeComponent } from './component/home/home.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: '',component:HomeComponent,  },
+  { path: 'home',component:HomeComponent,  },
 
   {path: 'product', component: ProductComponent},
   {path: 'order', component: OrderComponent},

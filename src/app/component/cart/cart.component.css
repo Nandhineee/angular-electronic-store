@@ -32,6 +32,12 @@ th, td {
   text-align: center;
   
 }
+.reduce{
+  background-color: #ddd !important;
+}
+#reduce{
+  background-color: #ddd !important;
+}
 
 th {
   background-color: #333;

@@ -24,12 +24,12 @@
         </td>
         <td>{{ cart.title }}</td>
         <td class="quantity">
-          <div class="container mt-4">
+          <div class="mt-4">
             <div class="input-group">
               <div class="input-group-prepend">
                 <button
-                  class="btn btn-outline-secondary"
-                  type="button"
+                  class="btn "
+                  type=""
                   id="minusBtn"
                   (click)="decrement(cart.id,cart.count,cart.gadgetId)"
                 >
@@ -38,19 +38,20 @@
               </div>
               <input
                 type="text"
-                class="form-control text-center"
                 [value]="cart.count"
                 id="numberInput"
               />
+              <div class="reduce">
               <div class="input-group-append">
                 <button
-                  class="btn btn-outline-secondary"
-                  type="button"
-                  id="plusBtn"
+                class="btn"
+                type="button"
+                id="plusBtn"
                   (click)="increment(cart.id,cart.count,cart.gadgetId)"
                 >
                   +
                 </button>
+              </div>
               </div>
             </div>
           </div>
