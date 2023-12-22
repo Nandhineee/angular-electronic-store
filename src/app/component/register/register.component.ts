@@ -66,7 +66,7 @@ export class RegisterComponent {
       },
       complete: () => {
         console.log('There are no more action happen.'),
-          this.router.navigate(['/login'], { replaceUrl: true });
+          this.router.navigate(['/'], { replaceUrl: true });
       },
     });
   }
