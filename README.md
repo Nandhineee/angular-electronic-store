@@ -31,13 +31,12 @@
 
 **Screenshots**
 
-![login](https://github.com/Nandhineee/Electronic-Gadget-Store/assets/145537963/1f0210b0-a34b-4e36-9ae3-558d395c8083)
-![homepage](https://github.com/Nandhineee/Electronic-Gadget-Store/assets/145537963/b956a8f2-73e9-48ef-bb48-29823671b065)
-![homepage2](https://github.com/Nandhineee/Electronic-Gadget-Store/assets/145537963/67e25f97-27e0-4f01-ba77-40f5690c2272)
-![homepage3](https://github.com/Nandhineee/Electronic-Gadget-Store/assets/145537963/f8aca778-185b-45fc-a632-76107af4d1aa)
-![Cart](https://github.com/Nandhineee/Electronic-Gadget-Store/assets/145537963/8567efc5-b634-47ac-9dcd-0faa3552e11c)
-![admin-detail](https://github.com/Nandhineee/Electronic-Gadget-Store/assets/145537963/3aeeefa5-a458-41f2-b12b-b9ebe9b98cbe)
-
+![login](https://github.com/Nandhineee/angular-electronic-store/assets/145537963/946fecc3-ecb7-4f1a-96bd-332abd144382)
+![homepage](https://github.com/Nandhineee/angular-electronic-store/assets/145537963/fb12834f-6ca2-40da-8a18-4078d83472f7)
+![homepage2](https://github.com/Nandhineee/angular-electronic-store/assets/145537963/919d7a9c-c67a-45e6-b0c8-14d3010c3003)
+![homepage3](https://github.com/Nandhineee/angular-electronic-store/assets/145537963/3f789e15-a9f6-47ce-b7ad-ea2db0d628b4)
+![Cart](https://github.com/Nandhineee/angular-electronic-store/assets/145537963/a04f9c91-5fe2-41d8-8867-3a7b2c9b913d)
+![admin-detail](https://github.com/Nandhineee/angular-electronic-store/assets/145537963/857b27d3-76f8-4f73-95f5-0e9699133a3a)
 
 **Challenges**
 
