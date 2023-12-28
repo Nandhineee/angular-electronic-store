@@ -38,6 +38,9 @@
                 <th>Name</th>
                 <th>OrderDetails</th>
                 <th>Price</th>
+                <th>Current Status</th>
+                <th>Edit Status</th>
+        
                
                 
             </tr>
@@ -49,6 +52,20 @@
               <td>{{ order.username }}</td>
               <td>{{ item.title }}</td>
               <td>{{ item.price }}</td>
+              <td>{{order.orderStatus}}</td>
+              
+        <td>
+          <select
+            [(ngModel)]="order.orderStatus"
+            (change)="onStatusChange(order)"
+          >
+          
+            <option value="1" >Pending</option>
+            <option value="2">Confirmed</option>
+            <option value="3">Out For Delivery</option>
+            <option value="4">Delivered</option>
+          </select>
+        </td>
             </tr>
             
           

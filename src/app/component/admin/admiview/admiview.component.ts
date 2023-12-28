@@ -25,7 +25,7 @@ export class AdmiviewComponent {
   ngOnInit(): void {
     this.userService.getusers().subscribe({
       next:(response:any)=>{
-        console.log(response);
+        
         let userDetails: UserDetails[] =response.data;
         if (userDetails.length > 0) {
           this.userDetails = userDetails;

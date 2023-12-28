@@ -77,3 +77,10 @@ th {
   text-align: center;
   font-weight: bold;
 }
+
+.centered-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

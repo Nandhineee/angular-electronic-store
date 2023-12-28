@@ -65,15 +65,15 @@ export class HomeComponent implements OnInit {
 
     this.productService.addToCart(this.storageService.getLoggedInUser()?.id, productId)
       .subscribe((Response) => console.log(Response));
-    error: () => console.log('product not added in cart');
+      error: () => console.log('product not added in cart');
   }
-  calculateTotalValue(): void {
-    this.totalValue = this.carts.reduce(
-      (acc, cart) => acc + cart.count * cart.price,
-      0
-    );
-    // this.ngOnInit();
-  }
+  // calculateTotalValue(): void {
+  //   this.totalValue = this.carts.reduce(
+  //     (acc, cart) => acc + cart.count * cart.price,
+  //     0
+  //   );
+  //   // this.ngOnInit();
+  // }
   // onDelete(deleteid: number, productId: number): void {
   //   console.log(deleteid, productId);
 
@@ -87,22 +87,22 @@ export class HomeComponent implements OnInit {
   //   });
   //   this.ngOnInit();
   // }
-  increamentCount(cart: Cart) {
-    //add product only 3
-    if (cart.count != 3) {
-      cart.count += 1;
-      this.cartService.cartCountUpdate(this.user.id, cart.gadgetId, cart.count, this.total)
-        .subscribe((response) => console.log(response));
-    }
-  }
-  decrementCount(cart: Cart) {
-    if (cart.count != 1) {
-      cart.count -= 1;
-      this.cartService
-        .cartCountUpdate(this.user.id, cart.gadgetId, cart.count, this.total)
-        .subscribe((response) => console.log(response));
-    }
-  }
+  // increamentCount(cart: Cart) {
+  //   //add product only 3
+  //   if (cart.count != 3) {
+  //     cart.count += 1;
+  //     this.cartService.cartCountUpdate(this.user.id, cart.gadgetId, cart.count, this.total)
+  //       .subscribe((response) => console.log(response));
+  //   }
+  // }
+  // decrementCount(cart: Cart) {
+  //   if (cart.count != 1) {
+  //     cart.count -= 1;
+  //     this.cartService
+  //       .cartCountUpdate(this.user.id, cart.gadgetId, cart.count, this.total)
+  //       .subscribe((response) => console.log(response));
+  //   }
+  // }
   // cartItem: Cart[] = this.stoargeService.getCart()!;
   // orders: Order[] = [];
   // addressId: number = 64;

@@ -86,7 +86,7 @@ export class CartComponent implements OnInit {
     return this.orders;
   }
 
-  cartcount(cartId: number, count: number): void {}
+  // cartcount(cartId: number, count: number): void {}
 
   decrement(cartid: number, count: number, gadgetId: number) {
     this.productService

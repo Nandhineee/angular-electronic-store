@@ -15,7 +15,93 @@ header {
 	margin-top: 6% !important;
 }
 
-section {
+main {
+	max-width: 800px;
+	margin: 20px auto;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+}
+
+.order-card {
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	margin-bottom: 20px;
+	padding: 15px;
+	transition: box-shadow 0.3s, transform 0.3s;
+	cursor: pointer;
+}
+
+.order-card:hover {
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+	transform: scale(1.02);
+}
+
+.order-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.order-number {
+	font-size: 1.7em;
+	font-weight: bold;
+	color: black;
+}
+
+.order-status {
+	font-weight: bold;
+	color: #2ecc71;
+	font-size: 2.0em;
+}
+
+.order-details {
+	padding: 15px;
+	background-color: #ecf0f1;
+	border-radius: 8px;
+	margin-top: 10px;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.3s ease-in-out;
+}
+
+.order-card:hover .order-details {
+	max-height: 1000px; /* Adjust the value based on your content */
+}
+
+.order-items {
+	list-style-type: none;
+
+	margin-top: 1.5%;
+}
+
+.order-item {
+	margin-bottom: 5px;
+	font-size: 1.7em;
+}
+
+.order-actions {
+	margin-top: 15px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+button {
+	background-color: #e74c3c;
+	color: #fff;
+	padding: 8px 15px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+button:hover {
+	background-color: #c0392b;
+}
+/* section {
 	margin: 20px;
 }
 
@@ -168,4 +254,6 @@ th {
 	#progressbar-2 li.active:before,
 	#progressbar-2 li.active:after {
 	background: gainsboro;
-	}
+	} */
+
+	
