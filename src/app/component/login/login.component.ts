@@ -5,11 +5,12 @@ import { AppResponse } from 'src/app/model/appResponse';
 import { Login } from 'src/app/model/login';
 import { AppUser } from 'src/app/model/appUser';
 import { AuthService } from 'src/app/service/auth.service';
+import { ToasterService } from 'src/app/service/toaster.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
   options: AnimationOptions = {
@@ -20,19 +21,23 @@ export class LoginComponent {
   password: String = '';
   error: String = '';
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private toaster: ToasterService
+  ) {}
 
   login(_loginForm: NgForm): void {
     let login: Login = {
       username: this.username,
       password: this.password,
     };
-    console.log(login)
+    console.log(login);
 
     this.authService.login(_loginForm.value).subscribe({
       next: (response: AppResponse) => {
         let user: AppUser = response.data;
         this.authService.setLoggedIn(user);
+        this.toaster.success('SuccessFully Logged In');
       },
       error: (err) => {
         console.log(err);

@@ -1,12 +1,14 @@
 <body>
+  
+
   <!-- 
     - #HEADER
   -->
 
   <!-- <header class="header" data-header> -->
-    <!-- <div class="container"> -->
+  <!-- <div class="container"> -->
 
-    <!-- <div class="overlay" data-overlay></div>
+  <!-- <div class="overlay" data-overlay></div>
 
       <div class="header-search">
         <input type="search" name="search" placeholder="Search Product..." class="input-field">
@@ -57,7 +59,7 @@
         <span></span>
         <span></span>
       </button> -->
-    <!-- <nav class="navbar" data-navbar>
+  <!-- <nav class="navbar" data-navbar>
       <div class="navbar-top">
         <a href="#" class="logo">
           <img
@@ -91,6 +93,8 @@
     </nav> -->
   <!-- </header> -->
 
+  
+
   <main>
     <article>
       <!-- 
@@ -101,23 +105,53 @@
         class="hero"
         id="home"
         style="
-          background-image: url(https://c0.wallpaperflare.com/preview/662/807/597/black-and-gray-camera-on-table-near-tablet-keyboard-case.jpg);
-        "
+        background-image: url(https://c0.wallpaperflare.com/preview/662/807/597/black-and-gray-camera-on-table-near-tablet-keyboard-case.jpg);
+        background-size: 100%; /* Adjust the height as needed */
+      "
+      
       >
         <div class="container">
           <div class="hero-content">
-            <h2 class="h1 hero-title">Gadget House</h2>
+            <!-- <h2 class="h1 hero-title ">Gadget House</h2> -->
+            <h2 class="h1 hero-title">Welcome {{ getLoggedInUserName() }}!!!
+</h2>
+            <div class="input mb-2 d-flex justify-content-center mt-5 align-items-center">
+              <input
+                type="text "
+                class="border border-radius-5 py-2"
+                placeholder="   Search"
+                name="searchQuery"
+                [(ngModel)]="searchQuery"
+                (ngModelChange)="onSearch()"
+                
+                style="
+                  background-color: white;
+                  width: 550px;
+                  border-top-right-radius: 0;
+                  border-bottom-right-radius: 0;
+                "
+                
+              />
+     <button
+      class="btn  ms-1"
+      style="border-top-left-radius: 0; border-bottom-left-radius: 0"
+      (click)="onSearch()"
+    >
+      <i class="fas fa-search fa-1x"></i>
+   </button>
+            </div>
 
-            <button
+            <!-- <button
               class="btn btn-primary"
               routerLink="/login"
               routerLinkActive="active"
             >
               Shop Now
-            </button>
+            </button> -->
           </div>
         </div>
       </section>
+      
       <!-- 
         - #SERVICE
       -->
@@ -185,6 +219,500 @@
               </div>
             </li>
           </ul>
+        </div>
+      </section>
+      <section class="section product">
+        <div class="container">
+          <h2 class="h2 section-title">Products of the week</h2>
+
+          <ul class="filter-list">
+            <!-- <li>
+              <button class="filter-btn active">Best Seller</button>
+            </li> -->
+
+            <li>
+              <button class="filter-btn">Hot Collection</button>
+            </li>
+<!-- 
+            <li>
+              <button class="filter-btn">Trendy</button>
+            </li>
+
+            <li>
+              <button class="filter-btn">New Arrival</button>
+            </li> -->
+          </ul>
+
+          <ul class="product-list">
+            <li class="card" *ngFor="let product of filterProduct.slice(
+              (currentPage - 1) * itemsPerPage,
+              currentPage * itemsPerPage
+            )">
+              <div class="product-card">
+                <figure class="card-banner">
+                  <div class="col-12">
+                    <img
+                      style="height: 300px; object-fit: contain;"
+                      src="{{ 'http://localhost:8080/api/downloadFile/' + product.id }}"
+                      class="card-img"
+                    />
+                  </div>
+                  <div class="card-badge red">-25%</div>
+                  <div class="card-actions">
+                    <!-- <button class="card-action-btn" aria-label="Quick view">
+                      
+                    </button> -->
+
+                    <!-- <button class="card-action-btn cart-btn">
+                      
+
+                      <p type="submit" 
+                      (click)="addToCart(product.id!)">Add to Cart</p>
+                    </button> -->
+
+                    <a
+                      type="submit"
+                      class="btn btn-secondary"
+                      (click)="addToCart(product.id!)"
+                      >Add to Cart</a
+                    >
+
+                    <!-- <button class="card-action-btn" aria-label="Add to Whishlist">
+                      
+                    </button> -->
+                  </div>
+                </figure>
+                <div class="card-content">
+                  <!-- <h3 class="h4 card-title">
+                    <a href="#">Varsi Leather Bag</a>
+                  </h3> -->
+
+                  <!-- <div class="card-price">
+                    <data value="48.75">&pound;48.75</data>
+
+                    <data value="65.00">&pound;65.00</data>
+                  </div> -->
+                  <div class="product">
+                    <p class="text-center fs-1">{{ product.title }}</p>
+                    <p class="text-center fw-bold fs-4">
+                      ₹ {{ product.price }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- <li>
+              <div class="product-card">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="./images/a1.png" alt="Fit Twill Shirt for Woman" loading="lazy" width="800"
+                      height="1034" class="w-100">
+                  </a>
+
+                  <div class="card-badge green"> New</div>
+
+                  <div class="card-actions">
+
+                    <button class="card-action-btn" aria-label="Quick view">
+                      
+                    </button>
+
+                    <button class="card-action-btn cart-btn">
+                      
+
+                      <p>Add to Cart</p>
+                    </button>
+
+                    <button class="card-action-btn" aria-label="Add to Whishlist">
+                      
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h4 card-title">
+                    <a href="#">Fit Twill Shirt for Woman</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data value="62.00">&pound;62.00</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="product-card">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="images/pr9.png" alt="Grand Atlantic Chukka Boots" loading="lazy"
+                      width="800" height="1034" class="w-100">
+                  </a>
+
+                  <div class="card-actions">
+
+                    <button class="card-action-btn" aria-label="Quick view">
+                      
+                    </button>
+
+                    <button class="card-action-btn cart-btn">
+                      
+
+                      <p>Add to Cart</p>
+                    </button>
+
+                    <button class="card-action-btn" aria-label="Add to Whishlist">
+                      
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h4 card-title">
+                    <a href="#">Grand Atlantic Chukka Boots</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data value="32.00">&pound;32.00</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="product-card">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="images/pr8.png" alt="Women's Faux-Trim Shirt" loading="lazy" width="800"
+                      height="1034" class="w-100">
+                  </a>
+
+                  <div class="card-actions">
+
+                    <button class="card-action-btn" aria-label="Quick view">
+                      
+                    </button>
+
+                    <button class="card-action-btn cart-btn">
+                  
+
+                      <p>Add to Cart</p>
+                    </button>
+
+                    <button class="card-action-btn" aria-label="Add to Whishlist">
+                    
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h4 card-title">
+                    <a href="#">Women's Faux-Trim Shirt</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data value="84.00">&pound;84.00</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="product-card">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="images/laptop2.png" alt="Soft Touch Interlock Polo" loading="lazy" width="800"
+                      height="1034" class="w-100">
+                  </a>
+
+                  <div class="card-actions">
+
+                    <button class="card-action-btn" aria-label="Quick view">
+                      
+                    </button>
+
+                    <button class="card-action-btn cart-btn">
+                    
+
+                      <p>Add to Cart</p>
+                    </button>
+
+                    <button class="card-action-btn" aria-label="Add to Whishlist">
+                      <i class="fa-light fa-cart-shopping"></i>
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h4 card-title">
+                    <a href="#">Soft Touch Interlock Polo</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data value="45.00">&pound;45.00</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="product-card">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="images/pr9.png" alt="Casmart Smart Watch" loading="lazy" width="800"
+                      height="1034" class="w-100">
+                  </a>
+
+                  <div class="card-actions">
+
+                    <button class="card-action-btn" aria-label="Quick view">
+                     
+                    </button>
+
+                    <button class="card-action-btn cart-btn">
+                     
+
+                      <p>Add to Cart</p>
+                    </button>
+
+                    <button class="card-action-btn" aria-label="Add to Whishlist">
+                    
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h4 card-title">
+                    <a href="#">Casmart Smart Watch</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data value="30.00">&pound;30.00</data>
+
+                    <data value="38.00">&pound;38.00</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="product-card">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="images/c2.png" alt="Casmart Smart Glass" loading="lazy" width="800"
+                      height="1034" class="w-100">
+                  </a>
+
+                  <div class="card-actions">
+
+                    <button class="card-action-btn" aria-label="Quick view">
+                     
+                    </button>
+
+                    <button class="card-action-btn cart-btn">
+                    
+
+                      <p>Add to Cart</p>
+                    </button>
+
+                    <button class="card-action-btn" aria-label="Add to Whishlist">
+                     
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h4 card-title">
+                    <a href="#">Casmart Smart Glass</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data value="25.00">&pound;25.00</data>
+
+                    <data value="39.00">&pound;39.00</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="product-card">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="images/a1.png" alt="Cotton Shirt for Men" loading="lazy" width="800"
+                      height="1034" class="w-100">
+                  </a>
+
+                  <div class="card-actions">
+
+                    <button class="card-action-btn" aria-label="Quick view">
+                 
+                    </button>
+
+                    <button class="card-action-btn cart-btn">
+                    
+
+                      <p>Add to Cart</p>
+                    </button>
+
+                    <button class="card-action-btn" aria-label="Add to Whishlist">
+                     
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h4 card-title">
+                    <a href="#">Cotton Shirt for Men</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data value="85.00">&pound;85.00</data>
+
+                    <data value="99.00">&pound;99.00</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="product-card">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924153/alcatel-smartphones-einsteiger-mittelklasse-neu-3m.jpg" alt="Double-breasted Blazer" loading="lazy" width="800"
+                      height="1034" class="w-100">
+                  </a>
+
+                  <div class="card-actions">
+
+                    <button class="card-action-btn" aria-label="Quick view">
+                      
+                    </button>
+
+                    <button class="card-action-btn cart-btn">
+                      
+
+                      <p>Add to Cart</p>
+                    </button>
+
+                    <button class="card-action-btn" aria-label="Add to Whishlist">
+                      
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h4 card-title">
+                    <a href="#">Double-breasted Blazer</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data value="32.00">&pound;32.00</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="product-card">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565713229/single_4.jpg" alt="Ribbed Cotton Bodysuits" loading="lazy" width="800"
+                      height="1034" class="w-100">
+                  </a>
+
+                  <div class="card-badge green">New</div>
+
+                  <div class="card-actions">
+
+                    <button class="card-action-btn" aria-label="Quick view">
+                     
+                    </button>
+
+                    <button class="card-action-btn cart-btn">
+                      
+
+                      <p>Add to Cart</p>
+                    </button>
+
+                    <button class="card-action-btn" aria-label="Add to Whishlist">
+                    
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h4 card-title">
+                    <a href="#">Ribbed Cotton Bodysuits</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data value="71.00">&pound;71.00</data>
+                  </div>
+                </div>
+
+              </div>
+            </li> -->
+          </ul>
+          <ul class="pagination justify-content-center mt-3 custom-pagination" *ngIf="products.length > 0">
+            <li class="page-item" [class.disabled]="currentPage === 1">
+              <a class="page-link" (click)="currentPage = currentPage - 1">Previous</a>
+            </li>
+            <li class="page-item text-danger" *ngFor="let page of getPageNumbers()" [class.active]="currentPage === page">
+              <a class="page-link" (click)="currentPage = page">{{ page }}</a>
+            </li>
+            <li class="page-item" [class.disabled]="currentPage === getLastPage()">
+              <a class="page-link" (click)="currentPage = currentPage + 1">Next</a>
+            </li>
+          </ul>
+          
+
+
         </div>
       </section>
       <!-- 
@@ -326,22 +854,17 @@
           </ul>
 
           <ul class="product-list">
-            <li class="card" *ngFor="let product of products">
+            <li class="card" *ngFor="let product of filterProduct">
               <div class="product-card">
                 <figure class="card-banner">
-                  <a href="#">
+                  <div class="col-12">
                     <img
-                      src="assets/images/laptop2.png"
-                      alt="Varsi Leather Bag"
-                      loading="lazy"
-                      width="800"
-                      height="1034"
-                      class="w-100"
+                      style="height: 300px; object-fit: contain;"
+                      src="{{ 'http://localhost:8080/api/downloadFile/' + product.id }}"
+                      class="card-img"
                     />
-                  </a>
-
+                  </div>
                   <div class="card-badge red">-25%</div>
-
                   <div class="card-actions">
                     <!-- <button class="card-action-btn" aria-label="Quick view">
                       
@@ -376,11 +899,13 @@
 
                     <data value="65.00">&pound;65.00</data>
                   </div> -->
+                  <div class="product">
+                    <p class="text-center fs-1">{{ product.title }}</p>
+                    <p class="text-center fw-bold fs-4">
+                      ₹ {{ product.price }}
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div class="product">
-              <p class="text-center fs-1">{{ product.title }}</p>
-              <p class="text-center fw-bold fs-4 ">₹ {{ product.price }}</p>
               </div>
             </li>
 
@@ -788,9 +1313,7 @@
 
       <div class="whole1">
         <div class="part1">
-          <img
-            src="https://cdn.kibrispdr.org/data/833/realme-logo-png-1.png"
-          />
+          <img src="https://cdn.kibrispdr.org/data/833/realme-logo-png-1.png" />
         </div>
         <div class="part1">
           <img

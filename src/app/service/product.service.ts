@@ -19,15 +19,19 @@ export class ProductService {
     );
   }
 
+  
+
   deleteProduct(id:number):Observable<AppResponse>{
     return this.http.delete<AppResponse>(
       `${urlEndpoint.baseUrl}/admin/gadget/${id}`
     );
   }  
   
-  postProduct(product:Product):Observable<AppResponse>{
+  postProduct(product:FormData):Observable<AppResponse>{
+    console.log(product);
+    
     return this.http.post<AppResponse>(
-      `${urlEndpoint.baseUrl}/admin/gadget`,product
+      `${urlEndpoint.baseUrl}/admin/gadget/create`,product
     )
 
     

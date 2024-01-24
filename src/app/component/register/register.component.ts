@@ -68,6 +68,9 @@ export class RegisterComponent {
         console.log('There are no more action happen.'),
           this.router.navigate(['/'], { replaceUrl: true });
       },
+
+   
+   
     });
   }
  

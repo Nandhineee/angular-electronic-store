@@ -1,4 +1,5 @@
 #header {
+  
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,6 +12,21 @@
   left: 0;
   right: 0;
 }
+#cart-icon-container {
+  position: relative;
+  display: inline-block; /* Ensures the container only takes as much width as necessary */
+}
+
+#cart-count {
+  position: absolute;
+  top: -10px; /* Adjust this value to position the count above the icon */
+  right: -10px; /* Adjust this value to position the count to the right of the icon */
+  background-color: gray; /* Add styling as needed */
+  color: white;
+  border-radius: 50%; /* Optional: Makes it round */
+  padding: 5px; /* Adjust as needed */
+}
+
 
 .header-list {
   display: flex;

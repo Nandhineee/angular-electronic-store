@@ -55,11 +55,16 @@ export class StorageService {
     localStorage.setItem('cart', JSON.stringify(cart));
   }
   public getCart(): Cart[] {
+    
     return JSON.parse(localStorage.getItem('cart') || '{}');
   }
   public removeCart():void{
     localStorage.removeItem('cart');
   }
+
+  
+  
+  
 
 
 

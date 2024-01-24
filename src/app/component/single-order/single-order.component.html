@@ -1,0 +1,539 @@
+<header>
+  <h1>Order Summary</h1>
+</header>
+
+
+
+  <div class="container my-5">
+    <div>
+      <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Choose</th>
+            <th scope="col">phonenumber</th>
+
+            <th scope="col">Address</th>
+            <th scope="col">City</th>
+            <th scope="col">Zipcode</th>
+            <th scope="col">Delete Address</th>
+          </tr>
+        </thead>
+        <tbody id="table">
+          <tr *ngFor="let add of addresses" [ngClass]="add.id ? 'table-info' : ''">
+            <!-- <td>
+              <input
+                type="checkbox"
+                (change)="onAddressSelection($event, add)"
+                [checked]="add.checked"
+              />
+            </td> -->
+            <td>
+              <input
+                type="radio"
+                (change)="onAddressSelection($event, add)"
+                [checked]="add.checked"
+                name="addressselected"
+              />
+            </td>
+            
+            <td>{{add.phonenumber}}  </td>
+            <td>{{add.address}}  </td>
+            <td>{{add.city}} </td>
+            <td> {{add.pincode}}</td>
+            <!-- <td>
+              <button action="edit" class="btn-del" >
+                Edit
+              </button>
+            </td> -->
+            <td>
+              <button
+                action="edit"
+                class="btn-del mx-4"
+                (click)="onDelete(add.id)"
+
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+   
+  </div>
+
+  <button 
+  type="button text-white"
+  class="mt-2 text-center btn btn-success mx-2 ms-auto"
+  data-bs-toggle="modal"
+  data-bs-target="#exampleModalAddress"
+  data-bs-whatever="@mdo"
+>
+  +Add Product
+</button>
+
+<div
+class="modal fade"
+id="exampleModalAddress"
+tabindex="-1"
+aria-labelledby="exampleModalLabelAddress"
+aria-hidden="true"
+>
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title fs-5" id="exampleModalLabelAddress">
+        Add Your Address.....
+      </h1>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="modal-body">
+    
+        <!-- <div class="mb-3">
+          <label for="item-title" class="col-form-label">Title:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="item-title"
+            name="title"
+            
+          />
+        </div>
+        <div class="mb-3">
+          <label for="item-description" class="col-form-label"
+            >Description:</label
+          >
+          <textarea
+            class="form-control"
+            id="item-description"
+            name="description"
+            
+          ></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="item-price" class="col-form-label">Price:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="item-price"
+            name="price"
+  
+          />
+        </div>
+        <div class="mb-3">
+          <label for="image-upload" class="col-form-label">Image:</label>
+          <input
+            type="file"
+            class="form-control"
+            id="image-upload"
+            accept="image/*"
+            name="photo"
+            
+            
+            
+          />
+        </div> -->
+<form #AddressForm="ngForm" (ngSubmit)="onSubmit(AddressForm)">
+
+  <label for="name">Phone:</label>
+  <input type="text" id="name" name="phonenumber" ngModel />
+
+  <label for="email">Address:</label>
+  <input type="email" id="email" name="address" ngModel />
+
+  <label for="address">City:</label>
+  <input type="text" id="address" name="city" ngModel />
+
+  <label for="address">Pincode:</label>
+  <input type="text" id="address" name="pincode" ngModel />
+
+  <button type="submit">
+    Submit
+  </button>
+</form> 
+
+        
+      
+    </div>
+    <!-- <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+        Close
+      </button>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        data-bs-dismiss="modal"
+        
+      > -->
+      
+    
+  
+  </div>
+</div>
+</div>
+
+
+<!-- <div class="row">
+  <div class="col-6">
+    <div class="container my-5">
+      <div class="loginpage">
+        <form #AddressForm="ngForm" (ngSubmit)="onSubmit(AddressForm)">
+          <div>
+            <label class="form-label" for="street">Address</label>
+
+            <input
+              type="text"
+              placeholder="Enter street"
+              class="form-control"
+              name="address"
+              ngModel
+              required
+              minlength="2"
+              maxlength="100"
+              #modelAddress="ngModel"
+              [ngClass]="
+                modelAddress.invalid && modelAddress.dirty ? 'is-invalid' : ''
+              "
+            />
+            <div *ngIf="modelAddress.invalid" class="invalid-feedback">
+              Enter valid address
+            </div>
+          </div>
+
+          <div>
+            <label class="form-label" for="city">City</label>
+
+            <input
+              type="text"
+              placeholder="Enter city"
+              class="form-control"
+              name="city"
+              ngModel
+              required
+              minlength="2"
+              maxlength="100"
+              #modelCity="ngModel"
+              [ngClass]="
+                modelCity.invalid && modelCity.dirty ? 'is-invalid' : ''
+              "
+            />
+            <div *ngIf="modelCity.invalid" class="invalid-feedback">
+              Enter valid city name
+            </div>
+          </div>
+
+          <div>
+            <label class="form-label" for="zipcode">Zipcode</label>
+
+            <input
+              type="text"
+              placeholder="Enter Zipcode"
+              class="form-control"
+              name="zipcode"
+              ngModel
+              required
+              minlength="6"
+              #modelCode="ngModel"
+              [ngClass]="
+                modelCode.invalid && modelCode.dirty ? 'is-invalid' : ''
+              "
+            />
+            <div *ngIf="modelCode.invalid" class="invalid-feedback">
+              Enter valid zipcode
+            </div>
+          </div>
+
+          <br />
+          <div>
+            <button class="checkout-btn btn ms-auto" type="submit">
+              Save Address
+            </button>
+          </div>
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+        <br /><br />
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="container my-5">
+      <div>
+        <table class="table table-bordered table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Choose</th>
+              <th scope="col">Address</th>
+              <th scope="col">City</th>
+              <th scope="col">Zipcode</th>
+              <th scope="col">Edit Address</th>
+              <th scope="col">Delete Address</th>
+            </tr>
+          </thead>
+          <tbody id="table">
+            <tr 
+>
+              <td>
+                <input type="checkbox"
+               />
+              </td>
+              <td>add.address</td>
+              <td>add.city</td>
+              <td>add.zipcode</td>
+              <td>
+                <button action="edit" class="btn-del">Edit</button>
+              </td>
+              <td>
+                <button>Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+       <button
+    class="checkout-btn btn"
+    routerLink="/order"
+    routerLinkActive="active"
+    (click)="confirmOrder()"
+  >
+    Place order
+  </button> -->
+    <!-- </div>
+  </div>
+</div>  -->
+
+<section>
+  <!-- Trending Section -->
+   <div class="card" *ngFor="let cart of carts">
+    <img
+      style="height: 300px; object-fit: contain"
+      src="{{ 'http://localhost:8080/api/downloadFile/' + cart.gadgetId }}"
+      class="card-img"
+    />
+
+    <div class="card-content">
+      <h2 style="color: skyblue">{{ cart.title }}</h2>
+      <p class="quantity">Qty:{{ cart.count }}</p>
+      <p>₹{{ cart.count * cart.price }}</p>
+    </div>
+  </div> 
+
+  
+ <table class="order-summary-table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cart of carts">
+        <td>{{ cart.title }}</td>
+        <td>{{ cart.count }}</td>
+        <td>₹{{ cart.count * cart.price }}</td>
+        <!-- <td colspan="2">{{ itemprice}}</td>
+        <td colspan="2">{{ itemcount}}</td> -->
+     </tr>
+    </tbody>
+    <tfoot>
+      <!-- <div class="order-summary-total">
+        <p>Total Quantity: {{ itemprice}}</p>
+        <p>Total: ${{ itemcount}}</p>
+      </div>  -->
+      <tr>
+        <th></th>
+        <th>Total Quantity: {{ itemprice}}</th>
+        <th>Total: ₹{{ itemcount}}/---</th>
+      </tr>  
+     </tfoot>
+  </table> 
+
+<!-- 
+  <div class= " col-6" style="margin-left: 50%;">
+    
+    <div class="order-summary-header">
+      <h2>Order Summary</h2>
+    </div>
+
+    <div class="order-summary-items " *ngFor="let cart of carts">
+      <div class="order-item">
+        <span>{{ cart.title }}</span>
+        <span>{{ cart.count }}</span>
+        <span>{{ cart.count * cart.price }}</span>
+      </div>
+     
+      <!-- Add more items as needed -->
+
+    <!-- </div>
+
+    <div class="order-summary-total">
+      <p>Total Quantity: {{ itemprice}}</p>
+      <p>Total: ${{ itemcount}}</p>
+    </div>
+  </div> --> -->
+
+
+   <button
+    class="checkout-btn btn"
+    (click)="confirmOrder(selectedAddresses)"
+    
+    >
+    Confirm Order
+  </button>
+
+  <!-- <a
+    href="javascript:window.print()"
+    class="btn btn-success waves-effect waves-light"
+    ><i class="fa fa-print"></i>Print</a
+  > -->
+  <!-- <button
+    class="checkout-btn btn"
+    (click)="confirmOrder(selectedAddresses)"
+    routerLink="/order"
+    routerLinkActive="active"
+    >
+    Confirm Order
+  </button> -->
+  <!-- <button 
+  type="button text-white"
+  class="mt-2 text-center btn btn-success mx-2 ms-auto"
+  data-bs-toggle="modal"
+  data-bs-target="#exampleModal"
+  data-bs-whatever="@mdo"
+>
+  Confirm Order
+</button> -->
+
+
+<div
+class="modal fade"
+id="exampleModal"
+tabindex="-1"
+aria-labelledby="exampleModalLabelConfirm"
+aria-hidden="true"
+>
+<div class="modal-dialog">
+  <div class="modal-content">
+    <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="modal"
+    aria-label="Close"
+  ></button>
+    <div class="modal-header">
+
+      <h1 class="modal-title fs-5" id="exampleModalLabelConfirm">
+       <div style="height: 100%; width: 100%" >
+        <ng-lottie [options]="options"></ng-lottie>
+      </div> 
+       
+
+      </h1>
+    </div>
+    <div class="modal-body">
+
+      <h1>{{issuedDate}}</h1>
+      <h2>{{ReturnDate}}</h2>
+     
+
+
+      
+    
+        <!-- <div class="mb-3">
+          <label for="item-title" class="col-form-label">Title:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="item-title"
+            name="title"
+            
+          />
+        </div>
+        <div class="mb-3">
+          <label for="item-description" class="col-form-label"
+            >Description:</label
+          >
+          <textarea
+            class="form-control"
+            id="item-description"
+            name="description"
+            
+          ></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="item-price" class="col-form-label">Price:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="item-price"
+            name="price"
+  
+          />
+        </div>
+        <div class="mb-3">
+          <label for="image-upload" class="col-form-label">Image:</label>
+          <input
+            type="file"
+            class="form-control"
+            id="image-upload"
+            accept="image/*"
+            name="photo"
+            
+            
+            
+          />
+        </div> -->
+   
+
+
+
+
+
+
+
+
+
+
+        
+      
+    </div>
+    <!-- <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+        Close
+      </button>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        data-bs-dismiss="modal"
+        
+      > -->
+      
+    
+  
+  </div>
+</div>
+</div>
+  <!-- Order Section -->
+
+
+
+  
+  
+  
+</section>

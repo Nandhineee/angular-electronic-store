@@ -12,6 +12,10 @@ import { AdmiviewComponent } from './component/admin/admiview/admiview.component
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { AdminorderComponent } from './component/admin/adminorder/adminorder.component';
 import { HomeComponent } from './component/home/home.component';
+import { SingleOrderComponent } from './component/single-order/single-order.component';
+import { AddressComponent } from './component/address/address.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -26,6 +30,10 @@ const routes: Routes = [
   {path: 'adminview', component:AdmiviewComponent},
   {path: 'navbar', component:NavbarComponent},
   {path: 'adminorder', component:AdminorderComponent},
+  {path: 'singleorder', component:SingleOrderComponent},
+  {path: 'address', component:AddressComponent},
+  {path: 'dashboard', component:DashboardComponent},
+
 
 
   

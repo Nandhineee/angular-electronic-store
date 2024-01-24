@@ -1,11 +1,11 @@
 import { Address } from "./address";
 
 export interface UserDetails {
-    id:number;
+    id ?:number;
     username: string;
     name: string;
-    joinedAt: string;
-    role:string
-    addressList: Address[];
+    joinedAt?: string;
+    role?:string
+    addressList?: Address[];
   
 }

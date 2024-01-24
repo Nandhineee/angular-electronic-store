@@ -78,6 +78,8 @@ private isAdminSubject = new BehaviorSubject<boolean>(false);
   isAdmin$: Observable<boolean> = this.isAdminSubject.asObservable();
   isLoggedIn$: Observable<boolean> = this.isLoggedInSubject.asObservable();
 
+  private loggedInUser: AppUser | null = null;
+
   constructor(
     private router: Router,
     private http: HttpClient,
@@ -116,20 +118,33 @@ private isAdminSubject = new BehaviorSubject<boolean>(false);
   isLoggedIn(): boolean {
     return this.isLoggedInSubject.value;
   }
+  
 
   setLoggedIn(user: AppUser): void {
+    this.loggedInUser = user;
+    this.storageService.setLoggedInUser(user);
+
     this.storageService.setLoggedInUser(user);
     this.isLoggedInSubject.next(true);
+
+  
 
     let route:string | null=this.storageService.getRoute();
     if (user.role === CONSTANT.USER) {
       if(route===null) route="/home";
       this.router.navigate(["/" + route], { replaceUrl: true });
     } else if (user.role === CONSTANT.ADMIN) {
-      if(route===null) route= "/adminproduct";
+      if(route===null) route= "/dashboard";
       this.isAdminSubject.next(true);
       this.router.navigate(["/" + route], { replaceUrl: true });
     }
+  }
+  getLoggedInUser(): AppUser | null {
+    return this.loggedInUser;
+  }
+ 
+  isUserLoggedIn(): boolean {
+    return !!this.loggedInUser;
   }
 
 }

@@ -17,16 +17,27 @@ export class OrderService {
     return this.http.get<Order[]>(`${urlEndpoint.baseUrl}/order/${userId}`);
   }
 
+  
+  postOrder(data: any): Observable<AppResponse> {
+    return this.http.post<AppResponse>(`${urlEndpoint.baseUrl}/order`, data);
+  }
+
+    getAllOrders(userId: number): Observable<AppResponse> {
+    // let userId=3;
+    return this.http.get<AppResponse>(`${urlEndpoint.baseUrl}/order/${userId}`);
+  }
+
+
   getAllOrderDetails(): Observable<Order[]> {
     return this.http.get<Order[]>(`${urlEndpoint.baseUrl}/admin/order/all`);
   }
 
 
   
-  createOrder(userId:number,id:number,addressId:number):Observable<Order[]>{
+  createOrder(userId:number,id:number,addressId:number|undefined):Observable<Order[]>{
     let orderdata={
       userId:userId,
-      addressId:1
+      addressId:addressId
     }
     console.log("changes userid and addressid");
     

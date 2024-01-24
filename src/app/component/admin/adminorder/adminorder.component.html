@@ -1,4 +1,4 @@
-<header class="container-fluid">
+<!-- <header class="container-fluid">
   <h1> Admin</h1>
 </header>
 <!-- <table class="table">
@@ -31,7 +31,7 @@
 
 
     <!-- User Details Table -->
-    <table>
+    <!-- <table>
         <thead>
             <tr>
                 <th>ID</th>
@@ -48,7 +48,7 @@
         <tbody *ngFor="let order of orderDetails">
           <tr *ngFor="let item of order.gadgetList">
             <!-- Sample user data, replace with dynamic data from your database -->
-              <th>{{ order.id }}</th>
+              <!-- <th>{{ order.id }}</th>
               <td>{{ order.username }}</td>
               <td>{{ item.title }}</td>
               <td>{{ item.price }}</td>
@@ -70,7 +70,61 @@
             
           
             <!-- Add more rows as needed -->
-        </tbody>
-    </table>
+        <!-- </tbody>
+    </table>  --> --> -->
+
+
     
+    <body>
+
+      <header class="container-fluid">
+          <h1>Order-Summary                </h1>
+      </header>
+  
+      <div class="container text-center">
+  
+          <!-- User Details Table -->
+          <table class="table table-bordered">
+              <thead class="thead-dark">
+                  <tr>
+                      
+                      <th>Name</th>
+                      <th>Order Details</th>
+                      <th>Order Description</th>
+                      <th>Price</th>
+                      <th>Order Date</th>
+                      <th>Total</th>
+                      <th>Count</th>
+                      <th>Edit Status</th>
+                  </tr>
+              </thead>
+              <tbody *ngFor="let order of orderDetails">
+                  <tr *ngFor="let item of order.gadgetList">
+                      <td>{{ order.username }}</td>
+                      <td>{{ item.title }}</td>
+                      <td>{{item.description}}</td>
+                      <td>₹{{ item.price }}</td>                
+                      <td>{{item.orderTime | date}}</td>
+                      <td>₹{{ item.price*item.count }}</td>                
+                      <td>{{item.count}}</td>
+                    
+
+                      <!-- <td>{{ order.orderStatus }}</td> -->
+                      <td>
+                          <select [(ngModel)]="order.orderStatusId" (change)="onStatusChange(order)">
+                              <option value="1" class="text-danger">Pending</option>
+                              <option value="2" class="text-info" >Confirmed</option>
+                              <option value="3" class="text-warning">Out For Delivery</option>
+                              <option value="4" class="text-success">Delivered</option>
+                          </select>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+  
+      </div>
+  
+  
+  </body>
+  
 

@@ -24,6 +24,8 @@ export class AdminorderComponent {
       complete: () => console.log('completed'),
     });
   }
+
+  
   onStatusChange(order: Order) {
     this.orderService.setStatus(order.id, order.orderStatus!).subscribe({
       next: (res: any) => {

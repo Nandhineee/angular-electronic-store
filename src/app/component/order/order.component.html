@@ -121,7 +121,7 @@
   <div class="order-card" *ngFor="let item of orderDetails">
       <div class="order-header">
           <span class="order-number">Order </span> 
-          <span class="order-status"><span style="color: brown;">{{item.orderStatus}}</span> </span>
+          <span class="order-status"><span >{{item.orderStatus}}</span> </span>
       </div>
       <div class="order-details" >
           <ul class="order-items" *ngFor="let gadget of item.gadgetList">

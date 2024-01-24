@@ -3,21 +3,27 @@
 </header>
 
 <div class="container">
-  <table>
+  <table *ngIf="carts.length > 0">
     <thead>
       <tr>
+        <th>S.no</th>
         <th>Product</th>
         <th>Title</th>
         <th>Quantity</th>
+        <th>Price</th>
+
         <th>Total</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let cart of carts">
+      <tr *ngFor="let cart of carts; let i = index">
+        <td>{{ Sno + i }}</td>
         <td class="cart-item">
           <img
-            src="assets/images/laptop2.png"
+            src="{{
+              'http://localhost:8080/api/downloadFile/' + cart.gadgetId
+            }}"
             alt="Product 1"
             class="product-image"
           />
@@ -28,114 +34,97 @@
             <div class="input-group">
               <div class="input-group-prepend">
                 <button
-                  class="btn "
+                  class="btn"
                   type=""
                   id="minusBtn"
-                  (click)="decrement(cart.id,cart.count,cart.gadgetId)"
+                  (click)="decrement(cart.id, cart.count, cart.gadgetId)"
                 >
                   -
                 </button>
               </div>
-              <input
-                type="text"
-                [value]="cart.count"
-                id="numberInput"
-              /> 
+              <input type="text" [value]="cart.count" id="numberInput" />
               <div class="reduce">
-              <div class="input-group-append">
-                <button
-                class="btn"
-                type="button"
-                id="plusBtn"
-                  (click)="increment(cart.id,cart.count,cart.gadgetId)"
-                >
-                  +
-                </button>
-              </div>
+                <div class="input-group-append">
+                  <button
+                    class="btn"
+                    type="button"
+                    id="plusBtn"
+                    (click)="increment(cart.id, cart.count, cart.gadgetId)"
+                  >
+                    +
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </td>
-        <td class="total-price">{{ cart.price*cart.count }}</td>
+
+        <td class="total-price">₹{{ cart.price }}</td>
+        <td class="total-price">₹{{ cart.price * cart.count }}</td>
         <td class="" (click)="onDelete(cart.userId, cart.gadgetId)">
           <i class="fa-solid fa-trash"></i>
         </td>
       </tr>
 
-      <!-- Add more rows for additional products -->
+      <!-- Add more rows for addition al products -->
     </tbody>
   </table>
+  <h1 *ngIf="carts.length === 0" class="d-flex justify-content-center" style="color: red;">
+    Your cart is empty!!!
+  </h1>
+  <!-- <h1 *ngIf="carts.length === 0" class="d-flex justify-content-center">
+    Your cart is empty
+  </h1> -->
 
-  <a
+  <a *ngIf="carts.length > 0"
     href="#"
     class="checkout-btn"
-    data-bs-toggle="modal" 
-    data-bs-target="#exampleModalCenter"
-    
-    (click)="checkOut()"
-    >Proceed to Checkout</a
+    routerLink="/singleorder"
+    routerLinkActive="active"
+  >
+    Proceed to Checkout</a
   >
 </div>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
-  Launch demo modal
-</button>
-
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="form-group">
-          <label for="street">Street:</label>
-          <input type="text" class="form-control" id="street" name="street">
-      </div>
-      <div class="form-group">
-          <label for="city">City:</label>
-          <input type="text" class="form-control" id="city" name="city">
-      </div>
-      <div class="form-group">
-          <label for="state">State:</label>
-          <input type="text" class="form-control" id="state" name="state">
-      </div>
-      <div class="form-group">
-          <label for="zipCode">Zip Code:</label>
-          <input type="text" class="form-control" id="zipCode" name="zipCode">
-      </div>
-      <table>
-      <tr>
-        <th>Product</th>
-        <th>Title</th>
-        <th>Quantity</th>
-        <th>Total</th>
-      </tr>
-      <tr>
-        <td ><img
-          src="assets/images/laptop2.png"
-          alt="Product 1"
-          class="product-image"></td>
-          <td>Levono</td>
-          <td>9</td>
-          <td>1000</td>
 
-      </tr>
-      </table>
-  
+<!-- <div *ngFor="let cart of carts"
+        class="d-flex rounded mb-3"
+        style="box-shadow: rgba(0, 0, 0, 0.5) 5px 3px 15px; height: 40%"
+      >
+        <div class="d-flex m-4">
+        
+          <div class="bg-primary" style="width: 2px"></div>
+          <img
+          style="height: 300px; object-fit: contain;"
+          src="{{ 'http://localhost:8080/api/downloadFile/' + cart.gadgetId }}"
+          class="card-img"
+        />
+        </div>
 
-      </div>
-      <div class="modal-footer">
-      <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" routerLink="/order"
-          routerLinkActive="active">Close</button> -->
-        <button type="button" class="btn btn-primary"data-bs-dismiss="modal" routerLink="/order"
-        routerLinkActive="active">confirm order</button>
-      </div>
-    </div>
-  </div>
-</div>
+        <div
+          class="col-6 m-3 bg-primary-subtle rounded p-4"
+          style="height: 90%"
+        >
+          <p class="fs-4 mb-0">>{{ cart.title }}</p>
+          <p class="fs-6 mb-0" style="text-indent: 50px">
+           arr.descriptio
+          </p>
+          <p class="fs-3 text-danger mt-3">₹ $arr.price.00</p>
+        </div>
+        <div
+          class="col-3 bg-body-secondary rounded p-3 m-3"
+          style="box-shadow: rgba(0, 0, 0, 0.5) 5px 3px 15px"
+        >
+          <p class="fs-5">Quantity :arr.count</p>
+          <div class="bg-primary" style="width: 100%; height: 2px"></div>
+          <p class="fs-6 mt-3 mb-0">Total Price</p>
+          <p class="fs-3 mb-0 text-danger">₹ arr.amount.00</p>
+
+          <button class="btn btn-outline-danger" style="margin-left: 65%"
+            >Delete</button
+          >
+        </div>
+        <p></p>
+      </div>`
+ -->

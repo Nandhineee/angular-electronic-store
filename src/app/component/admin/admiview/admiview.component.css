@@ -1,11 +1,11 @@
-body {
+ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding-top: 70% !important;
     background-color: #f4f4f4;
 }
 
-h2 {
+/* h2 {
     text-align: center;
 }
 
@@ -13,20 +13,23 @@ h2 {
     display: flex;
     justify-content: space-around;
     margin: 20px;
-}
+} */
 
-table {
+/* table {
     width: 45%;
     margin-bottom: 30px;
     border-collapse: collapse;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     background-color: #fff;
-}
+} */
 
-th, td {
+th {
     padding: 15px;
     text-align: left;
+    margin-top: 10%;
+    
     border-bottom: 1px solid #ddd;
+    
 }
 header {
     margin-top: 6%;

@@ -12,6 +12,7 @@ import { CartService } from 'src/app/service/cart.service';
 import { Router } from '@angular/router';
 import { OrderService } from 'src/app/service/order.service';
 import { Order } from 'src/app/model/order';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -26,7 +27,11 @@ export class HomeComponent implements OnInit {
   selectedItem: string = '';
   total: number = 0;
   user:AppUser;
-  
+  filterProduct:Product[]=[];
+  searchQuery: string = '';
+  itemsPerPage: number = 3;
+  currentPage: number = 1;
+
 
   
   itemCount: number = 1;
@@ -37,6 +42,7 @@ export class HomeComponent implements OnInit {
   constructor(private productService:ProductService,
      private storageService:StorageService,    
      private homeService: HomeService,
+     private authService:AuthService,
 
      private cartService: CartService,
      private stoargeService: StorageService,
@@ -53,6 +59,7 @@ export class HomeComponent implements OnInit {
         
         let productDetails: Product[] = response.data;
         this.products = productDetails;
+        this.filterProduct=productDetails
       },
       error: (err) => {
         let message: string = err?.error?.error?.message;
@@ -67,6 +74,35 @@ export class HomeComponent implements OnInit {
       .subscribe((Response) => console.log(Response));
       error: () => console.log('product not added in cart');
   }
+
+  onSearch() {
+    // Filter books based on the search term
+    this.filterProduct = this.products.filter((product) =>
+      product.title.toLowerCase().includes(this.searchQuery.toLowerCase())
+    );
+  }
+
+  isUserLoggedIn(): boolean {
+    console.log(this.getLoggedInUserName);
+    
+    return this.authService.isUserLoggedIn();
+  }
+ 
+  getLoggedInUserName(): String {
+    console.log(this.getLoggedInUserName);
+    return this.authService.getLoggedInUser()?.username || 'Guest';
+    
+    
+  }
+  getLastPage(): number {
+    return this.getPageNumbers().slice(-1)[0] || 1;
+  }
+  getPageNumbers(): number[] {
+    const pageCount = Math.ceil(this.products.length / this.itemsPerPage);
+    return Array.from({ length: pageCount }, (_, index) => index + 1);
+  }
+  
+  
   // calculateTotalValue(): void {
   //   this.totalValue = this.carts.reduce(
   //     (acc, cart) => acc + cart.count * cart.price,

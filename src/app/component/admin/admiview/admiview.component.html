@@ -2,9 +2,9 @@
     <h1> User Details - Admin</h1>
 </header>
 
-    <div class="container">
-        <!-- User Details Table -->
-        <table>
+    <!-- <div class="container">
+        User Details Table 
+     <table>
             <thead>
                 <tr>
                     <th>ID</th>
@@ -18,15 +18,15 @@
             (click)="setSelectedUser(user)"
             [ngClass]="user.id === userDetail.id ? 'table-primary' : ''"
           >
-                <!-- Sample user data, replace with dynamic data from your database -->
-                <tr>
+                Sample user data, replace with dynamic data from your database -->
+                 <!-- <tr>
                     <td>{{user.id}}</td>
                     <td>{{user.username}}</td>
                     <td>{{user.name}}</td>
                   
                 </tr>
               
-                <!-- Add more rows as needed -->
+            
             </tbody>
         </table>
         
@@ -41,7 +41,67 @@
              <br>
             <p>Pincode: {{ address.pincode }}
               <br>
-          </div>
+          </div>  -->
+
+
+
+    <div class="table-responsive">
+      <table class="table user-details-table">
+        <tbody>
+          <!-- <tr>
+            <td colspan="4">
+              <p class="user-title">USER DETAILS</p>
+            </td>
+          </tr> -->
+          <tr>
+            <td colspan="4">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Username</th>
+                  </tr>
+                </thead>
+                <tbody    *ngFor="let user of userDetails"
+                (click)="setSelectedUser(user)"
+                [ngClass]="user.id === userDetail.id ? 'table-primary' : ''">
+                  <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.username }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+
+    
+            
+    <thead>
+                  <th scope="col" style="margin: 50%;">Address</th>
+                
+                
+              </thead>
+        
+          <tr *ngFor="let address of userDetail.addressList" >
+            <td style="color: mediumturquoise;">Address</td>
+            <td>:</td>
+            <td colspan="2">{{ address.address }}</td>
+    
+        
+            <td style="color: mediumaquamarine">City</td>
+            <td>:</td>
+            <td colspan="2">{{ address.city }}</td>
+          
+        
+            <td style="color: mediumaquamarine;">Zipcode</td>
+            <td>:</td>
+            <td colspan="2">{{ address.pincode }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
 
      

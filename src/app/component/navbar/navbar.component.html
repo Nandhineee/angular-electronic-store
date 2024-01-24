@@ -11,7 +11,7 @@
               class="fa-solid fa-clock-rotate-left"
               routerLink="/adminorder"
               routerLinkActive="active"
-            ></a>
+            > Orders</a>
           </li>
 
           <li>
@@ -19,14 +19,14 @@
               class="fa-solid fa-user"
               routerLink="/adminview"
               routerLinkActive="active"
-            ></a>
+            > View</a>
           </li>
           <li>
             <a
-              class="fa-solid fa-book"
+              class="fa-solid fa-square-plus"
               routerLink="/adminproduct"
               routerLinkActive="active"
-            ></a>
+            > Product</a>
           </li>
           <li>
             <a
@@ -35,7 +35,7 @@
               routerLinkActive="active"
               (click)="logout()"
               role="button"
-            ></a>
+            > Logout</a>
           </li>
         </ul>
       </nav>
@@ -52,30 +52,51 @@
         <ul>
           <li><a class="fa-solid fa-house"               
             routerLink="/home"
-            routerLinkActive="active"></a></li>
+            routerLinkActive="active"> Home</a></li>
 
-          <!-- <li>
+<!-- 
+         <li>
             <a
-              class="fa-solid fa-user"
-              routerLink=""
-              routerLinkActive="active"
-            ></a>
-          </li> -->
-
-          <button class="header-action-btn">
-            <i
               class="fas fa-cart-plus"
+
               routerLink="/cart"
               routerLinkActive="active"
-            ></i>
-          </button>
-          <li>
-            <a
-              class="fa-solid fa-book"
-              routerLink="/order"
-              routerLinkActive="active"
-            ></a>
-          </li>
+            > 
+             <span id="cart-count">0</span>
+             Cart</a>
+            
+
+         </li>  -->
+         <!-- <li>
+          <a id="cart-icon-container"
+          
+          routerLink="/cart"
+          routerLinkActive="active">
+            <!-- <span id="cart-count">  
+            </span> -->
+            <!-- <i id="cart-icon" class="fa fa-shopping-cart"></i>Cart
+          </a>
+        
+         </li> -->
+             
+         <li>
+          <a
+          class="fas fa-cart-plus"
+            routerLink="/cart"
+            routerLinkActive="active"
+          > Cart</a>
+        </li>
+
+     
+          
+         <li>
+          <a
+          class="fa-solid fa-truck"
+            routerLink="/order"
+            routerLinkActive="active"
+          > Orders</a>
+        </li>
+
           
           <li>
             <a
@@ -84,7 +105,7 @@
               routerLinkActive="active"
               (click)="logout()"
               role="button"
-            ></a>
+            > Logout</a>
           </li>
         </ul>
       </nav>

@@ -1,0 +1,35 @@
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    form {
+      text-align: center;
+      margin: 50px;
+    }
+
+    p{
+        font-size: 150%;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .yes-button, .no-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .yes-button {
+      background-color: #4CAF50; /* Green */
+      color: white;
+    }
+
+    .no-button {
+      background-color: #FF5733; /* Red */
+      color: white;
+    }
